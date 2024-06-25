@@ -8,13 +8,13 @@ import {
   Typography,
 } from "@mui/material";
 import BanderaArgentina from "common/assets/banderaargentina.jpg";
-import { SOLANA_ADRESS } from "constants";
+import { SOLANA_CONTRACT_ADRESS } from "constants";
 import { useSnackbar } from "notistack";
 
 const FlagSection = () => {
   const { enqueueSnackbar } = useSnackbar();
   const handleCopyToClipboard = async () => {
-    await navigator.clipboard.writeText(SOLANA_ADRESS);
+    await navigator.clipboard.writeText(SOLANA_CONTRACT_ADRESS);
     enqueueSnackbar("Copied");
   };
   return (
@@ -68,7 +68,9 @@ const FlagSection = () => {
           <Stack spacing={1} alignItems="center">
             <Typography variant="h5">Solana Network</Typography>
             <Stack direction="row" spacing={1} alignItems="center">
-              <Typography variant="subtitle1">{SOLANA_ADRESS}</Typography>
+              <Typography variant="subtitle1">
+                {SOLANA_CONTRACT_ADRESS}
+              </Typography>
               <IconButton color="inherit" onClick={handleCopyToClipboard}>
                 <ContentCopyIcon />
               </IconButton>
