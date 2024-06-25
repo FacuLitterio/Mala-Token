@@ -15,12 +15,13 @@ const charVariants = {
 const AnimatedTypography = motion(Typography);
 
 const AnimatedSubtitle: React.FC<AnimatedTitleProps> = ({ text, ...rest }) => {
-  const { variant = "body2", paragraph = true } = rest;
+  const { variant = "body2", color = "text.primary", paragraph = true } = rest;
   const textChars = splitString(text);
   return (
     <AnimatedTypography
       initial="hidden"
       whileInView="reveal"
+      color={color}
       transition={{ staggerChildren: 0.02 }}
       variant={variant}
       paragraph={paragraph}

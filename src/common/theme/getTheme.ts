@@ -1,23 +1,27 @@
 import { PaletteMode, ThemeOptions } from "@mui/material";
-import { grey } from "@mui/material/colors";
 
-const commonTokens = () => ({
+const commonTokens = (): ThemeOptions["palette"] => ({
   primary: {
-    main: "#8CC90A",
+    main: "#5B5F97",
+  },
+  background: {
+    paper: "#1E1F31",
+  },
+  text: {
+    primary: "#FFFFFF",
   },
 });
 
 const getTheme = (mode: PaletteMode): ThemeOptions => {
   return {
     typography: {
-      fontFamily: '"Oswald", sans-serif',
+      fontFamily: "Sriracha, cursive",
     },
     components: {
       MuiButton: {
         defaultProps: {
           sx: {
             textTransform: "none",
-            color: "text.primary",
           },
           disableElevation: true,
         },
@@ -26,21 +30,6 @@ const getTheme = (mode: PaletteMode): ThemeOptions => {
     palette: {
       mode,
       ...commonTokens(),
-      ...(mode === "light"
-        ? {
-            // palette values for light mode
-            text: {
-              primary: "#444444",
-              secondary: grey[800],
-            },
-          }
-        : {
-            // palette values for dark mode
-            text: {
-              primary: "#fff",
-              secondary: grey[500],
-            },
-          }),
     },
   };
 };

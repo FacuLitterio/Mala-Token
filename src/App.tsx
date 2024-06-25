@@ -6,17 +6,11 @@ import {
   createTheme,
   responsiveFontSizes,
 } from "@mui/material";
-import WhatsAppSpeedDial from "common/components/WhatsAppSpeedDial";
-import CertificacionesSection from "components/CertificacionesSection";
-import ContactoSection from "components/ContactoSection";
-import FAQSection from "components/FAQSection";
-import FooterSection from "components/FooterSection";
-import InvestSection from "components/InvestSection";
-import MainSection from "components/MainSection";
-import MediosPagoSection from "components/MediosPagoSection";
-import ServiciosSection from "components/ServiciosSection";
-import TestimoniosSection from "components/TestimoniosSection";
-import TransaccionesSection from "components/TransaccionesSection";
+import DonationsSection from "components/DonationsSection";
+import FlagSection from "components/FlagSection";
+import FordwardSection from "components/FordwardSection";
+import MissionSection from "components/MissionSection";
+import SlideShowSection from "components/SlideShowSection";
 import { createContext, useMemo, useState } from "react";
 import AppBar from "./common/components/AppBar";
 import getTheme from "./common/theme/getTheme";
@@ -45,24 +39,20 @@ const App = () => {
         <Box
           component="main"
           sx={{
+            minHeight: "100vh",
             width: 1,
             display: "flex",
             flexDirection: "column",
             overflowX: "hidden",
+            bgcolor: theme.palette.background.paper,
           }}
         >
           <AppBar />
-          <MainSection />
-          <MediosPagoSection />
-          <ServiciosSection />
-          <InvestSection />
-          <TransaccionesSection />
-          <FAQSection />
-          <TestimoniosSection />
-          <ContactoSection />
-          <CertificacionesSection />
-          <FooterSection />
-          <WhatsAppSpeedDial />
+          <FordwardSection />
+          <SlideShowSection />
+          <FlagSection />
+          <MissionSection />
+          <DonationsSection />
         </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>

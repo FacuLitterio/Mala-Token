@@ -1,26 +1,24 @@
-import LoginIcon from "@mui/icons-material/Login";
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   Avatar,
   Box,
   Button,
-  LinearProgress,
+  IconButton,
   AppBar as MuiAppBar,
   Stack,
   Toolbar,
   Typography,
 } from "@mui/material";
-import { DEFAULT_ELEVATION } from "common/constants";
-import { PANDAPAY_APP_URL } from "constants";
+import MagaLogo from "common/assets/MagaLogo.png";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { useCallback, useEffect, useRef, useState } from "react";
-import PandaPayIcon from "../assets/PandaPay_Logo.png";
+import { useEffect, useRef, useState } from "react";
 
-const pages = [
-  { id: 1, label: "Inicio" },
-  { id: 2, label: "Servicios" },
-  { id: 3, label: "Invierte" },
-  { id: 4, label: "Testimonios" },
-  { id: 5, label: "Contacto" },
+const PAGES = [
+  { id: 1, label: "Home" },
+  { id: 2, label: "Mission" },
+  { id: 3, label: "Donations" },
+  { id: 4, label: "Tokenomics" },
+  { id: 5, label: "Roadmap" },
 ];
 
 const AnimatedBox = motion(Box);
@@ -28,9 +26,6 @@ const AnimatedBox = motion(Box);
 const AppBar = () => {
   const [activeSection, setActiveSection] = useState("");
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
-  const handleClickIniciarSesion = useCallback(() => {
-    window.location.href = PANDAPAY_APP_URL;
-  }, []);
 
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -38,13 +33,13 @@ const AppBar = () => {
     damping: 30,
     restDelta: 0.001,
   });
-  const [hookedYPostion, setHookedYPosition] = useState(0);
+  const [_hookedYPostion, setHookedYPosition] = useState(0);
   useEffect(() => {
     scaleX.onChange((v) => setHookedYPosition(v));
   }, [scaleX, scrollYProgress]);
 
   useEffect(() => {
-    pages.forEach((page, index) => {
+    PAGES.forEach((page, index) => {
       sectionsRef.current[index] = document.getElementById(page.label);
     });
 
@@ -72,7 +67,8 @@ const AppBar = () => {
 
   const handleScrollToSection = (sectionId: string) => {
     const yOffset = -75;
-    const element = document.getElementById(sectionId)!;
+    const element = document.getElementById(sectionId);
+    if (!element) return;
     const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
     window.scrollTo({ top: y, behavior: "smooth" });
   };
@@ -102,89 +98,85 @@ const AppBar = () => {
 
   return (
     <>
-      <MuiAppBar
-        position="fixed"
-        elevation={DEFAULT_ELEVATION}
-        sx={{ bgcolor: "background.paper" }}
-      >
-        <Toolbar>
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={2}
-            sx={{ cursor: "pointer" }}
-            onClick={() => handleScrollToSection("Inicio")}
-          >
-            <Avatar src={PandaPayIcon} sx={{ height: 45, width: 45 }} />
-            <Typography variant="h6" fontWeight="bold" component="span">
-              Panda
-              <Typography
-                variant="h6"
-                component="span"
-                fontWeight="bold"
-                color="primary.main"
-              >
-                Pay
-              </Typography>
-            </Typography>
-          </Stack>
-          <Box sx={{ flexGrow: 1 }} />
+      <MuiAppBar position="fixed" color="transparent" elevation={0}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Box
             sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
+              height: 64,
+              mt: 1,
+              bgcolor: "#212121",
+              borderRadius: 20,
+              p: 2,
             }}
           >
-            <Stack direction="row" spacing={2}>
-              {pages.map((page) => (
-                <Box key={page.id} sx={{ position: "relative" }}>
-                  <Button
-                    sx={{
-                      textTransform: "none",
-                      color:
-                        activeSection === page.label
-                          ? "primary.main"
-                          : "text.primary",
-                    }}
-                    onClick={() => {
-                      handleScrollToSection(page.label);
-                    }}
-                  >
-                    {page.label}
-                  </Button>
-                  <AnimatedBox
-                    sx={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: "3px",
-                      backgroundColor: "#8CC90A",
-                      transformOrigin: "center",
-                    }}
-                    variants={variants}
-                    animate={
-                      activeSection === page.label ? "active" : "inactive"
-                    }
-                    initial={false}
-                  />
-                </Box>
-              ))}
+            <Stack
+              sx={{ height: 1 }}
+              direction="row"
+              alignItems="center"
+              spacing={5}
+            >
+              <Stack direction="row" spacing={0.5}>
+                <Avatar src={MagaLogo} />
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  component="span"
+                  color="white"
+                  onClick={() => handleScrollToSection("Inicio")}
+                  sx={{ cursor: "pointer" }}
+                >
+                  $MALA
+                </Typography>
+              </Stack>
+              <Stack direction="row" spacing={1}>
+                {PAGES.map((page) => (
+                  <Box key={page.id} sx={{ position: "relative" }}>
+                    <Button
+                      sx={{
+                        textTransform: "none",
+                        fontWeight: "bolder",
+                        color:
+                          activeSection === page.label
+                            ? "primary.main"
+                            : "white",
+                      }}
+                      onClick={() => {
+                        handleScrollToSection(page.label);
+                      }}
+                    >
+                      {page.label}
+                    </Button>
+                    <AnimatedBox
+                      sx={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        height: "3px",
+                        backgroundColor: (theme) => theme.palette.primary.main,
+                        transformOrigin: "center",
+                      }}
+                      variants={variants}
+                      animate={
+                        activeSection === page.label ? "active" : "inactive"
+                      }
+                      initial={false}
+                    />
+                  </Box>
+                ))}
+              </Stack>
+              <IconButton sx={{ color: "white" }} onClick={() => {}}>
+                <MenuIcon />
+              </IconButton>
             </Stack>
           </Box>
-
-          <Stack direction="row" spacing={2}>
-            <Button
-              color="primary"
-              variant="outlined"
-              startIcon={<LoginIcon />}
-              onClick={handleClickIniciarSesion}
-            >
-              Ingresar
-            </Button>
-          </Stack>
         </Toolbar>
-        <LinearProgress variant="determinate" value={hookedYPostion * 100} />
       </MuiAppBar>
     </>
   );

@@ -28,10 +28,10 @@ const DecorationBar = styled("span")(({ theme }) => ({
 const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
   text,
   primaryWord,
-  showDecorationBar = true,
+  showDecorationBar = false,
   ...rest
 }) => {
-  const { variant = "h4", color = "text.primary", fontWeight = 600 } = rest;
+  const { variant = "h2", fontWeight = 600 } = rest;
   const textChars = splitString(text);
   const theme = useTheme();
 
@@ -57,7 +57,6 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
       whileInView="reveal"
       transition={{ staggerChildren: 0.02 }}
       variant={variant}
-      color={color}
       fontWeight={fontWeight}
       sx={{ position: "relative" }}
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
