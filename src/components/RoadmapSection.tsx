@@ -59,6 +59,7 @@ const TIMELINE_INFO = [
     imageUrl: RothbardImage,
     items: [
       { text: "1000 Holders", isComplete: false },
+      { text: "5000 Twitter & Instagram Followers.", isComplete: false },
       {
         text: "Keep growing the community and adding partnerships with influencers.",
         isComplete: false,
@@ -108,13 +109,13 @@ const TIMELINE_INFO = [
     title: "Phase 5: “Ludwin Von Mises”",
     imageUrl: LudwinVonMisesImage,
     items: [
+      {
+        text: "10,000 Holders",
+        isComplete: false,
+      },
       { text: "50,000 Twitter & Instagram Followers", isComplete: false },
       {
         text: "Continue Expanding the Freedom Ideas",
-        isComplete: false,
-      },
-      {
-        text: "10,000 Holders",
         isComplete: false,
       },
       {
@@ -177,7 +178,10 @@ const RoadmapSection = () => {
                 <TimelineSeparator>
                   <TimelineConnector />
                   <TimelineDot sx={{ p: 0 }}>
-                    <Avatar src={item.imageUrl} sx={{ p: 0 }} />
+                    <Avatar
+                      src={item.imageUrl}
+                      sx={{ p: 0, height: 75, width: 75 }}
+                    />
                   </TimelineDot>
                   <TimelineConnector />
                 </TimelineSeparator>

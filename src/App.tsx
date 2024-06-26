@@ -9,7 +9,9 @@ import {
 import DonationsSection from "components/DonationsSection";
 import FlagSection from "components/FlagSection";
 import FordwardSection from "components/FordwardSection";
+import HowBuySection from "components/HowBuySection";
 import MissionSection from "components/MissionSection";
+import PrivacyPolicySection from "components/PrivacyPolicySection";
 import RoadmapSection from "components/RoadmapSection";
 import SlideShowSection from "components/SlideShowSection";
 import TokenomicsSection from "components/TokenomicsSection";
@@ -57,6 +59,8 @@ const App = () => {
           <DonationsSection />
           <TokenomicsSection />
           <RoadmapSection />
+          <HowBuySection />
+          <PrivacyPolicySection />
         </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
