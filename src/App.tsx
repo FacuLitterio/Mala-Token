@@ -10,6 +10,7 @@ import DonationsSection from "components/DonationsSection";
 import FlagSection from "components/FlagSection";
 import FordwardSection from "components/FordwardSection";
 import MissionSection from "components/MissionSection";
+import RoadmapSection from "components/RoadmapSection";
 import SlideShowSection from "components/SlideShowSection";
 import TokenomicsSection from "components/TokenomicsSection";
 import { createContext, useMemo, useState } from "react";
@@ -55,6 +56,7 @@ const App = () => {
           <MissionSection />
           <DonationsSection />
           <TokenomicsSection />
+          <RoadmapSection />
         </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
