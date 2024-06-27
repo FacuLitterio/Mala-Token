@@ -70,13 +70,18 @@ const TokenomicsSection = () => {
               color: "primary.main",
               bgcolor: "#FFF",
               borderRadius: 1,
-              fontSize: "2.4rem",
+              fontSize: { xs: "1.2rem", md: "1.5rem", lg: "2.4rem" },
               fontWeight: 900,
             }}
           />
         </AnimateWhileView>
-        <Grid container justifyContent="center" sx={{ pt: 5 }}>
-          <Grid item xs>
+        <Grid
+          container
+          justifyContent="center"
+          sx={{ pt: { xs: 3, md: 5 } }}
+          rowSpacing={3}
+        >
+          <Grid item xs={12} md={4}>
             <Stack alignItems="center">
               <AnimatedTitle
                 text="LP Burned"
@@ -91,7 +96,7 @@ const TokenomicsSection = () => {
               />
             </Stack>
           </Grid>
-          <Grid item xs>
+          <Grid item xs={12} md={4}>
             <Stack alignItems="center">
               <AnimatedTitle
                 text="Ownership"
@@ -106,7 +111,7 @@ const TokenomicsSection = () => {
               />
             </Stack>
           </Grid>
-          <Grid item xs>
+          <Grid item xs={12} md={4}>
             <Stack alignItems="center">
               <AnimatedTitle text="Tax" variant="h3" color="text.primary" />
               <AnimatedTitle
@@ -156,7 +161,7 @@ const TokenomicsSection = () => {
             }}
           >
             <Grid container sx={{ display: "flex", justifyContent: "center" }}>
-              <Grid item xs={6}>
+              <Grid item xs={12} md={10} lg={8}>
                 <List sx={{ bgcolor: "#FFF" }}>
                   <ListItem divider>
                     <Stack
@@ -271,7 +276,7 @@ const TokenomicsSection = () => {
 
           <TabPanel value="3" sx={{ width: 1 }}>
             <Grid container sx={{ display: "flex", justifyContent: "center" }}>
-              <Grid item xs={8}>
+              <Grid item xs={12} md={10} lg={8}>
                 <List sx={{ bgcolor: "#FFF" }}>
                   <ListItem divider>
                     <Stack
@@ -286,6 +291,7 @@ const TokenomicsSection = () => {
                       <Typography variant="body2" color="text.secondary">
                         {DONATIONS_WALLET_CONTRACT_ADRESS}
                         <IconButton
+                          size="small"
                           onClick={() =>
                             copyToClipboard(DONATIONS_WALLET_CONTRACT_ADRESS)
                           }
@@ -308,6 +314,7 @@ const TokenomicsSection = () => {
                       <Typography variant="body2" color="text.secondary">
                         {MARKETING_WALLET_CONTRACT_ADRESS}
                         <IconButton
+                          size="small"
                           onClick={() =>
                             copyToClipboard(MARKETING_WALLET_CONTRACT_ADRESS)
                           }
@@ -330,6 +337,7 @@ const TokenomicsSection = () => {
                       <Typography variant="body2" color="text.secondary">
                         {COMMUNITY_WALLET_CONTRACT_ADRESS}
                         <IconButton
+                          size="small"
                           onClick={() =>
                             copyToClipboard(COMMUNITY_WALLET_CONTRACT_ADRESS)
                           }
@@ -352,6 +360,7 @@ const TokenomicsSection = () => {
                       <Typography variant="body2" color="text.secondary">
                         {TEAM_WALLET_CONTRACT_ADRESS}
                         <IconButton
+                          size="small"
                           onClick={() =>
                             copyToClipboard(TEAM_WALLET_CONTRACT_ADRESS)
                           }

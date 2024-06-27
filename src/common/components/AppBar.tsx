@@ -1,8 +1,14 @@
+import AltRouteIcon from "@mui/icons-material/AltRoute";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import ExtensionIcon from "@mui/icons-material/Extension";
+import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
+import VolunteerActivismIcon from "@mui/icons-material/VolunteerActivism";
 import {
   Avatar,
   Box,
   Button,
+  Hidden,
   IconButton,
   AppBar as MuiAppBar,
   Stack,
@@ -15,11 +21,11 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export const PAGES = [
-  { id: 1, label: "Home" },
-  { id: 2, label: "Mission" },
-  { id: 3, label: "Donations" },
-  { id: 4, label: "Tokenomics" },
-  { id: 5, label: "Roadmap" },
+  { id: 1, label: "Home", icon: <HomeIcon /> },
+  { id: 2, label: "Mission", icon: <AutoAwesomeIcon /> },
+  { id: 3, label: "Donations", icon: <VolunteerActivismIcon /> },
+  { id: 4, label: "Tokenomics", icon: <ExtensionIcon /> },
+  { id: 5, label: "Roadmap", icon: <AltRouteIcon /> },
 ];
 
 const AnimatedBox = motion(Box);
@@ -116,6 +122,7 @@ const AppBar: React.FC<{ onChangeMenu: () => void }> = ({ onChangeMenu }) => {
             >
               <Stack
                 direction="row"
+                alignItems="center"
                 spacing={0.5}
                 onClick={() => onScrollToSection("Inicio")}
               >
@@ -134,43 +141,46 @@ const AppBar: React.FC<{ onChangeMenu: () => void }> = ({ onChangeMenu }) => {
                   $MALA
                 </Typography>
               </Stack>
-              <Stack direction="row" spacing={1}>
-                {PAGES.map((page) => (
-                  <Box key={page.id} sx={{ position: "relative" }}>
-                    <Button
-                      sx={{
-                        textTransform: "none",
-                        fontWeight: "bolder",
-                        color:
-                          activeSection === page.label
-                            ? "primary.main"
-                            : "white",
-                      }}
-                      onClick={() => {
-                        onScrollToSection(page.label);
-                      }}
-                    >
-                      {page.label}
-                    </Button>
-                    <AnimatedBox
-                      sx={{
-                        position: "absolute",
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        height: "3px",
-                        backgroundColor: (theme) => theme.palette.primary.main,
-                        transformOrigin: "center",
-                      }}
-                      variants={variants}
-                      animate={
-                        activeSection === page.label ? "active" : "inactive"
-                      }
-                      initial={false}
-                    />
-                  </Box>
-                ))}
-              </Stack>
+              <Hidden smDown>
+                <Stack direction="row" spacing={1}>
+                  {PAGES.map((page) => (
+                    <Box key={page.id} sx={{ position: "relative" }}>
+                      <Button
+                        sx={{
+                          textTransform: "none",
+                          fontWeight: "bolder",
+                          color:
+                            activeSection === page.label
+                              ? "primary.main"
+                              : "white",
+                        }}
+                        onClick={() => {
+                          onScrollToSection(page.label);
+                        }}
+                      >
+                        {page.label}
+                      </Button>
+                      <AnimatedBox
+                        sx={{
+                          position: "absolute",
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          height: "3px",
+                          backgroundColor: (theme) =>
+                            theme.palette.primary.main,
+                          transformOrigin: "center",
+                        }}
+                        variants={variants}
+                        animate={
+                          activeSection === page.label ? "active" : "inactive"
+                        }
+                        initial={false}
+                      />
+                    </Box>
+                  ))}
+                </Stack>
+              </Hidden>
               <IconButton
                 sx={{ color: "white" }}
                 onClick={() => onChangeMenu()}

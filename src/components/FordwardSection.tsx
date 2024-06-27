@@ -1,5 +1,5 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { Avatar, Button, Chip, Grid, Stack } from "@mui/material";
+import { Avatar, Button, Chip, Grid, Hidden, Stack } from "@mui/material";
 import MagaIcon from "common/assets/MagaLogo.png";
 import AnimatedSubtitle from "common/components/AnimatedSubtitle";
 import AnimatedTitle from "common/components/AnimatedTitle";
@@ -11,11 +11,16 @@ const FordwardSection = () => {
   return (
     <Section id="Home">
       <Grid container spacing={4} pt={7}>
-        <Grid item xs>
-          <AnimateWhileView anchor="left">
-            <Avatar src={MagaIcon} sx={{ height: 480, width: 480 }} />
-          </AnimateWhileView>
-        </Grid>
+        <Hidden smDown>
+          <Grid item xs>
+            <AnimateWhileView anchor="left">
+              <Avatar
+                src={MagaIcon}
+                sx={{ height: 1, maxHeight: 480, width: 1, maxWidth: 480 }}
+              />
+            </AnimateWhileView>
+          </Grid>
+        </Hidden>
         <Grid item xs>
           <AnimateWhileView anchor="right">
             <Stack spacing={3}>

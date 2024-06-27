@@ -8,7 +8,7 @@ import {
   Grid,
   Stack,
 } from "@mui/material";
-import SolanaImage from "common/assets/Solana.png";
+import SolanaImage from "common/assets/Solana-Logo-200px-150x150.png";
 import AnimatedTitle from "common/components/AnimatedTitle";
 import Section from "common/components/Section";
 

@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { ListItemIcon, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
@@ -44,6 +44,9 @@ const DrawerMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
             {PAGES.map((page) => (
               <ListItem key={page.id} disablePadding>
                 <ListItemButton>
+                  <ListItemIcon sx={{ color: "white" }}>
+                    {page.icon}
+                  </ListItemIcon>
                   <ListItemText
                     primary={page.label}
                     onClick={() => onScrollToSection(page.label)}

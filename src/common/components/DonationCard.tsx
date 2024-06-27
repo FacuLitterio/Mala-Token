@@ -63,7 +63,7 @@ const DonationCard: React.FC<DonationCardProps> = ({
             avatar={
               <LockOutlinedIcon fontSize="small" style={{ fill: "white" }} />
             }
-            sx={{ color: "text.primary", bgcolor: "primary.light" }}
+            sx={{ color: "text.primary", bgcolor: "grey.500" }}
           />
           <Typography variant="h2" color="primary.light">
             {amount}
