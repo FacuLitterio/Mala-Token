@@ -10,10 +10,11 @@ import {
   Typography,
 } from "@mui/material";
 import MagaLogo from "common/assets/MagaLogo.png";
+import onScrollToSection from "common/helpers/onScrollToSection";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const PAGES = [
+export const PAGES = [
   { id: 1, label: "Home" },
   { id: 2, label: "Mission" },
   { id: 3, label: "Donations" },
@@ -23,7 +24,7 @@ const PAGES = [
 
 const AnimatedBox = motion(Box);
 
-const AppBar = () => {
+const AppBar: React.FC<{ onChangeMenu: () => void }> = ({ onChangeMenu }) => {
   const [activeSection, setActiveSection] = useState("");
   const sectionsRef = useRef<(HTMLElement | null)[]>([]);
 
@@ -64,14 +65,6 @@ const AppBar = () => {
       });
     };
   }, []);
-
-  const handleScrollToSection = (sectionId: string) => {
-    const yOffset = -75;
-    const element = document.getElementById(sectionId);
-    if (!element) return;
-    const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-    window.scrollTo({ top: y, behavior: "smooth" });
-  };
 
   const variants = {
     active: {
@@ -121,15 +114,22 @@ const AppBar = () => {
               alignItems="center"
               spacing={5}
             >
-              <Stack direction="row" spacing={0.5}>
-                <Avatar src={MagaLogo} />
+              <Stack
+                direction="row"
+                spacing={0.5}
+                onClick={() => onScrollToSection("Inicio")}
+              >
+                <Avatar
+                  src={MagaLogo}
+                  onClick={() => onScrollToSection("Inicio")}
+                />
                 <Typography
                   variant="h6"
                   fontWeight="bold"
                   component="span"
                   color="white"
-                  onClick={() => handleScrollToSection("Inicio")}
                   sx={{ cursor: "pointer" }}
+                  onClick={() => onScrollToSection("Inicio")}
                 >
                   $MALA
                 </Typography>
@@ -147,7 +147,7 @@ const AppBar = () => {
                             : "white",
                       }}
                       onClick={() => {
-                        handleScrollToSection(page.label);
+                        onScrollToSection(page.label);
                       }}
                     >
                       {page.label}
@@ -171,7 +171,10 @@ const AppBar = () => {
                   </Box>
                 ))}
               </Stack>
-              <IconButton sx={{ color: "white" }} onClick={() => {}}>
+              <IconButton
+                sx={{ color: "white" }}
+                onClick={() => onChangeMenu()}
+              >
                 <MenuIcon />
               </IconButton>
             </Stack>

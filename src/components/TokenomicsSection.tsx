@@ -16,6 +16,7 @@ import {
 import Tab from "@mui/material/Tab";
 import { PieChart } from "@mui/x-charts/PieChart";
 import AnimatedTitle from "common/components/AnimatedTitle";
+import AnimateWhileView from "common/components/AnimateWhileView";
 import Section from "common/components/Section";
 import {
   COMMUNITY_WALLET_CONTRACT_ADRESS,
@@ -61,46 +62,59 @@ const TokenomicsSection = () => {
           sx={{ maxWidth: 200 }}
         />
         <AnimatedTitle text="Tokenomics" />
-        <Chip
-          label="1,000,000,000 SUPPLY"
-          sx={{
-            p: 4,
-            color: "primary.main",
-            bgcolor: "#FFF",
-            borderRadius: 1,
-            fontSize: "2.4rem",
-            fontWeight: 900,
-          }}
-        />
+        <AnimateWhileView anchor="left">
+          <Chip
+            label="1,000,000,000 SUPPLY"
+            sx={{
+              p: 4,
+              color: "primary.main",
+              bgcolor: "#FFF",
+              borderRadius: 1,
+              fontSize: "2.4rem",
+              fontWeight: 900,
+            }}
+          />
+        </AnimateWhileView>
         <Grid container justifyContent="center" sx={{ pt: 5 }}>
           <Grid item xs>
             <Stack alignItems="center">
-              <Typography variant="h3" color="text.primary">
-                LP Burned
-              </Typography>
-              <Typography variant="h2" color="text.primary" fontWeight={600}>
-                100%
-              </Typography>
+              <AnimatedTitle
+                text="LP Burned"
+                variant="h3"
+                color="text.primary"
+              />
+              <AnimatedTitle
+                text="100%"
+                variant="h3"
+                color="text.primary"
+                fontWeight={600}
+              />
             </Stack>
           </Grid>
           <Grid item xs>
             <Stack alignItems="center">
-              <Typography variant="h3" color="text.primary">
-                Ownership
-              </Typography>
-              <Typography variant="h2" color="text.primary" fontWeight={600}>
-                Renounced
-              </Typography>
+              <AnimatedTitle
+                text="Ownership"
+                variant="h3"
+                color="text.primary"
+              />
+              <AnimatedTitle
+                text="Renounced"
+                variant="h3"
+                color="text.primary"
+                fontWeight={600}
+              />
             </Stack>
           </Grid>
           <Grid item xs>
             <Stack alignItems="center">
-              <Typography variant="h3" color="text.primary">
-                Tax
-              </Typography>
-              <Typography variant="h2" color="text.primary" fontWeight={600}>
-                1%
-              </Typography>
+              <AnimatedTitle text="Tax" variant="h3" color="text.primary" />
+              <AnimatedTitle
+                text="1%"
+                variant="h3"
+                color="text.primary"
+                fontWeight={600}
+              />
             </Stack>
           </Grid>
         </Grid>

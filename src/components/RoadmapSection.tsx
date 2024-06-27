@@ -17,6 +17,7 @@ import FriedmanImage from "common/assets/MiltonFriedman.jpg";
 import RothbardImage from "common/assets/Rothbard.png";
 import AnimatedSubtitle from "common/components/AnimatedSubtitle";
 import AnimatedTitle from "common/components/AnimatedTitle";
+import AnimateWhileView from "common/components/AnimateWhileView";
 import Section from "common/components/Section";
 
 const TIMELINE_INFO = [
@@ -186,33 +187,37 @@ const RoadmapSection = () => {
                   <TimelineConnector />
                 </TimelineSeparator>
                 <TimelineContent sx={{ py: "12px", px: 2 }}>
-                  <Typography variant="h6" sx={{ width: 1 }} component="span">
-                    {item.title}
-                  </Typography>
-                  <List dense>
-                    {item.items.map((nestedItem, i) => (
-                      <ListItem key={i}>
-                        <Stack direction="row" spacing={1}>
-                          <Avatar
-                            sx={{
-                              height: 20,
-                              width: 20,
-                              color: "primary.main",
-                            }}
-                          >
-                            {nestedItem.isComplete ? (
-                              <CheckCircleIcon color="success" />
-                            ) : (
-                              <RadioButtonUncheckedIcon />
-                            )}
-                          </Avatar>
-                          <Typography variant="body2">
-                            {nestedItem.text}
-                          </Typography>
-                        </Stack>
-                      </ListItem>
-                    ))}
-                  </List>
+                  <AnimateWhileView
+                    anchor={item.id % 2 === 0 ? "left" : "right"}
+                  >
+                    <Typography variant="h6" sx={{ width: 1 }} component="span">
+                      {item.title}
+                    </Typography>
+                    <List dense>
+                      {item.items.map((nestedItem, i) => (
+                        <ListItem key={i}>
+                          <Stack direction="row" spacing={1}>
+                            <Avatar
+                              sx={{
+                                height: 20,
+                                width: 20,
+                                color: "primary.main",
+                              }}
+                            >
+                              {nestedItem.isComplete ? (
+                                <CheckCircleIcon color="success" />
+                              ) : (
+                                <RadioButtonUncheckedIcon />
+                              )}
+                            </Avatar>
+                            <Typography variant="body2">
+                              {nestedItem.text}
+                            </Typography>
+                          </Stack>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </AnimateWhileView>
                 </TimelineContent>
               </TimelineItem>
             ))}

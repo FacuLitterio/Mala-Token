@@ -1,20 +1,33 @@
 import { Box } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import React, { PropsWithChildren } from "react";
 
 const AnimatedBox = motion(Box);
 
-const AnimateWhileView: React.FC<PropsWithChildren> = ({ children }) => {
+type AnimateWhileViewProps = PropsWithChildren<{ anchor: "right" | "left" }>;
+
+const AnimateWhileView: React.FC<AnimateWhileViewProps> = ({
+  anchor,
+  children,
+}) => {
   return (
-    <AnimatePresence>
-      <AnimatedBox
-        whileInView="reveal"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-      >
-        {children}
-      </AnimatedBox>
-    </AnimatePresence>
+    <AnimatedBox
+      initial={{
+        opacity: 0,
+        // if odd index card,slide from right instead of left
+        x: anchor === "right" ? 50 : -50,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0, // Slide in to its original position
+        transition: {
+          duration: 0.5, // Animation duration
+        },
+      }}
+      viewport={{ once: true }}
+    >
+      {children}
+    </AnimatedBox>
   );
 };
 

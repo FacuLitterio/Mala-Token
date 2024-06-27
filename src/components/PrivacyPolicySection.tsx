@@ -24,10 +24,15 @@ const PrivacyPolicySection = () => {
               Please note that "Make Argentina Libertarian Again" Token is an
               entertainment cryptocurrency and is not associated with or
               endorsed by Javier Milei. Although the token may include
-              references to Milei’s persona, image, or ideas, it does not
-              suggest any official endorsement, partnership, or approval from
-              Milei. Any resemblance to Javier Milei is purely coincidental and
-              meant for humorous or satirical purposes only.
+              references to Milei’s persona, image, or ideas,{" "}
+              <b>
+                <u>
+                  it does not suggest any official endorsement, partnership, or
+                  approval from Milei
+                </u>
+              </b>
+              . Any resemblance to Javier Milei is purely coincidental and meant
+              for humorous or satirical purposes only.
             </Typography>
             <RedesSociales />
           </Stack>

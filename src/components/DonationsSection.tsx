@@ -117,7 +117,9 @@ const DonationsSection = () => {
             </Stack>
           </Grid>
           <Grid item xs sx={{ display: "flex", justifyContent: "center" }}>
-            <SlideShow data={DONATIONS_INFO} autoplay={false} />
+            <AnimateWhileView anchor="right">
+              <SlideShow data={DONATIONS_INFO} autoplay={false} />
+            </AnimateWhileView>
           </Grid>
         </Grid>
       </Stack>
