@@ -115,7 +115,7 @@ const TokenomicsSection = () => {
             <Stack alignItems="center">
               <AnimatedTitle text="Tax" variant="h3" color="text.primary" />
               <AnimatedTitle
-                text="1%"
+                text="0%"
                 variant="h3"
                 color="text.primary"
                 fontWeight={600}
