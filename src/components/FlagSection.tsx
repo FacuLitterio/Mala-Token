@@ -91,7 +91,7 @@ const FlagSection = () => {
                     variant="subtitle1"
                     sx={{
                       fontSize: {
-                        xs: ".8rem",
+                        xs: ".6rem",
                         md: "1rem",
                         lg: "1.5rem",
                       },

@@ -23,7 +23,7 @@ import Section from "common/components/Section";
 const TIMELINE_INFO = [
   {
     id: 1,
-    date: "July 2024",
+    date: "",
     title: "Phase 1: “Adam Smith”",
     imageUrl: AdamSmithImage,
     items: [
@@ -43,24 +43,24 @@ const TIMELINE_INFO = [
   },
   {
     id: 2,
-    date: "August 2024",
+    date: "",
     title: "Phase 2: “Friedrich Hayek”",
     imageUrl: HayekImage,
     items: [
       { text: "Token Launch on Solana Network.", isComplete: false },
       { text: "DexScreener & DexTools Ads.", isComplete: false },
-      { text: "500 Holders", isComplete: false },
-      { text: "1000 Twitter & Instagram Followers.", isComplete: false },
+      { text: "1,000 Holders", isComplete: false },
+      { text: "500 Twitter & Instagram Followers.", isComplete: false },
     ],
   },
   {
     id: 3,
-    date: "September 2024",
+    date: "",
     title: "Phase 3: “Murray Rothbard”",
     imageUrl: RothbardImage,
     items: [
-      { text: "1000 Holders", isComplete: false },
-      { text: "5000 Twitter & Instagram Followers.", isComplete: false },
+      { text: "5,000 Holders", isComplete: false },
+      { text: "1000 Twitter & Instagram Followers.", isComplete: false },
       {
         text: "Keep growing the community and adding partnerships with influencers.",
         isComplete: false,
@@ -81,11 +81,11 @@ const TIMELINE_INFO = [
   },
   {
     id: 4,
-    date: "October 2024 | November 2024",
+    date: "",
     title: "Phase 4: “Milton Friedman”",
     imageUrl: FriedmanImage,
     items: [
-      { text: "5,000 Holders", isComplete: false },
+      { text: "10,000 Holders", isComplete: false },
       {
         text: "Distribute Airdrops totaling 0.3% of the Supply",
         isComplete: false,
@@ -106,12 +106,12 @@ const TIMELINE_INFO = [
   },
   {
     id: 5,
-    date: "Dicember 2024 | January 2025",
+    date: "",
     title: "Phase 5: “Ludwin Von Mises”",
     imageUrl: LudwinVonMisesImage,
     items: [
       {
-        text: "10,000 Holders",
+        text: "20,000 Holders",
         isComplete: false,
       },
       { text: "50,000 Twitter & Instagram Followers", isComplete: false },
@@ -127,12 +127,12 @@ const TIMELINE_INFO = [
   },
   {
     id: 6,
-    date: "February 2024 | March 2025",
+    date: "",
     title: "Phase 6: “Javier Milei”",
     imageUrl: JavierMileiImage,
     items: [
       {
-        text: "20,000 Holders",
+        text: "50,000 Holders",
         isComplete: false,
       },
       { text: "100,000 Twitter & Instagram Followers", isComplete: false },

@@ -19,7 +19,7 @@ const DONATIONS_INFO = [
       "Estamos dedicados a apoyar el bienestar animal a través de donaciones a organizaciones benéficas locales. Con su ayuda, podemos hacer una diferencia significativa en la vida de muchos animales necesitados.",
     type: "Crypto",
     date: "???",
-    target: "5,000 Holders",
+    target: "10,000 Holders",
     frequency: "One-Time",
     amount: "2 ETH",
   },
@@ -32,7 +32,7 @@ const DONATIONS_INFO = [
       "ARAF es una Asociación sin fines de lucro, dedicados a la protección de los animales y a la lucha del respeto por su vida, contra la eutanasia, el maltrato, el sufrimiento, el abandono y a favor del control de su reproducción con métodos éticos.",
     type: "Crypto",
     date: "???",
-    target: "10,000 Holders",
+    target: "50,000 Holders",
     frequency: "One-Time",
     amount: "4 ETH",
   },
@@ -45,7 +45,7 @@ const DONATIONS_INFO = [
       "Rescate, recupero, castración y adopción responsable de perros abandonados y maltratados. Concientización sobre tenencia responsable de perros y gatos.",
     type: "Crypto",
     date: "???",
-    target: "20,000 Holders",
+    target: "100,000 Holders",
     frequency: "One-Time",
     amount: "8 ETH",
   },
@@ -54,7 +54,7 @@ const DONATIONS_INFO = [
 const DonationsSection = () => {
   return (
     <Section id="Donations">
-      <Stack spacing={2} alignItems="center">
+      <Stack width={1} alignItems="center" rowGap={5}>
         <Chip
           label="Supporting Stray Dogs"
           variant="outlined"
@@ -62,7 +62,7 @@ const DonationsSection = () => {
         />
         <AnimatedTitle text="Donations" />
         <Grid container spacing={5} justifyContent="center">
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6}>
             <Stack spacing={2}>
               <AnimatedTitle
                 text="Commitment to Animal Welfare"
@@ -101,7 +101,7 @@ const DonationsSection = () => {
                 is left behind, bringing hope and compassion to those who need
                 it most.`}
               />
-              <AnimateWhileView>
+              <AnimateWhileView anchor="left">
                 <Stack
                   direction="row"
                   spacing={2}
@@ -116,7 +116,12 @@ const DonationsSection = () => {
               </AnimateWhileView>
             </Stack>
           </Grid>
-          <Grid item xs sx={{ display: "flex", justifyContent: "center" }}>
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
             <AnimateWhileView anchor="right">
               <SlideShow data={DONATIONS_INFO} autoplay={false} />
             </AnimateWhileView>

@@ -34,6 +34,14 @@ const PrivacyPolicySection = () => {
               . Any resemblance to Javier Milei is purely coincidental and meant
               for humorous or satirical purposes only.
             </Typography>
+            <Typography variant="caption" color="inherit" textAlign="center">
+              Investing in cryptocurrencies involves significant risk and can
+              result in the loss of your invested capital. Cryptocurrencies are
+              highly volatile and subject to market fluctuations. Before
+              investing, please conduct thorough research and consider seeking
+              advice from a financial professional. Your investment in $MALA
+              should be based on your risk tolerance and financial situation.
+            </Typography>
             <RedesSociales />
           </Stack>
         </Grid>

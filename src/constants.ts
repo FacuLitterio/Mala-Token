@@ -8,3 +8,6 @@ export const COMMUNITY_WALLET_CONTRACT_ADRESS =
   "HaP8r3ksG76PhQLTqR8FYBeNiQpejcFbQmiHbg787Ut1";
 export const TEAM_WALLET_CONTRACT_ADRESS =
   "HaP8r3ksG76PhQLTqR8FYBeNiQpejcFbQmiHbg787Ut1";
+export const FACEBOOK_URL = "";
+export const INSTAGRAM_URL = "";
+export const TELEGRAM_URL = "";

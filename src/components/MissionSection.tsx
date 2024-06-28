@@ -1,21 +1,24 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Avatar, Button, Chip, Grid, Stack } from "@mui/material";
+import { Avatar, Button, Chip, Grid, Hidden, Stack } from "@mui/material";
 import MagaIcon from "common/assets/MagaLogo.png";
 import AnimatedSubtitle from "common/components/AnimatedSubtitle";
 import AnimatedTitle from "common/components/AnimatedTitle";
 import AnimateWhileView from "common/components/AnimateWhileView";
 import Section from "common/components/Section";
+import onScrollToSection from "common/helpers/onScrollToSection";
 
 const MissionSection = () => {
   return (
     <Section id="Mission">
-      <Grid container justifyContent="space-around">
-        <Grid item xs={4}>
-          <AnimateWhileView anchor="left">
-            <Avatar src={MagaIcon} sx={{ height: 380, width: 380 }} />
-          </AnimateWhileView>
-        </Grid>
-        <Grid item xs={5}>
+      <Grid container justifyContent="center">
+        <Hidden smDown>
+          <Grid item xs={4} sm={6} md={5}>
+            <AnimateWhileView anchor="left">
+              <Avatar src={MagaIcon} sx={{ height: 380, width: 380 }} />
+            </AnimateWhileView>
+          </Grid>
+        </Hidden>
+        <Grid item xs={12} sm={6} md={5}>
           <AnimateWhileView anchor="right">
             <Stack spacing={3}>
               <Chip
@@ -29,6 +32,7 @@ const MissionSection = () => {
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}
                 sx={{ maxWidth: 150, textTransform: "none" }}
+                onClick={() => onScrollToSection("Donations")}
               >
                 Learn More
               </Button>

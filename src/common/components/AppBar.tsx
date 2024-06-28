@@ -182,7 +182,7 @@ const AppBar: React.FC<{ onChangeMenu: () => void }> = ({ onChangeMenu }) => {
                 </Stack>
               </Hidden>
               <IconButton
-                sx={{ color: "white" }}
+                sx={{ color: "white", cursor: "pointer" }}
                 onClick={() => onChangeMenu()}
               >
                 <MenuIcon />

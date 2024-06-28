@@ -1,6 +1,7 @@
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { Avatar, Button, Chip, Grid, Hidden, Stack } from "@mui/material";
-import MagaIcon from "common/assets/MagaLogo.png";
+import { Button, Chip, Grid, Hidden, Stack } from "@mui/material";
+import AnimatedMalaCoin from "common/components/AnimatedMalaCoin";
 import AnimatedSubtitle from "common/components/AnimatedSubtitle";
 import AnimatedTitle from "common/components/AnimatedTitle";
 import AnimateWhileView from "common/components/AnimateWhileView";
@@ -14,10 +15,7 @@ const FordwardSection = () => {
         <Hidden smDown>
           <Grid item xs>
             <AnimateWhileView anchor="left">
-              <Avatar
-                src={MagaIcon}
-                sx={{ height: 1, maxHeight: 480, width: 1, maxWidth: 480 }}
-              />
+              <AnimatedMalaCoin />
             </AnimateWhileView>
           </Grid>
         </Hidden>
@@ -37,14 +35,28 @@ const FordwardSection = () => {
                 primaryWord="$MALA"
               />
               <AnimatedSubtitle text="Inspired by the revolutionary ideas of Javier Milei, $MALA (Make Argentina Libertarian Again) promote economic freedom and advocate for free market policies. Our mission extends beyond financial growth, supporting social causes like improving the lives of stray dogs in Argentina. We aim to create a decentralized ecosystem rooted in individual liberty and economic empowerment." />
-              <Button
-                variant="contained"
-                startIcon={<ShoppingCartOutlinedIcon />}
-                size="large"
-                sx={{ maxWidth: 200, textTransform: "none" }}
-              >
-                Buy on Solana
-              </Button>
+              <Stack direction="row" spacing={2}>
+                <Button
+                  variant="contained"
+                  startIcon={<ShoppingCartOutlinedIcon />}
+                  size="large"
+                  sx={{ maxWidth: 200, textTransform: "none" }}
+                >
+                  Buy on Solana
+                </Button>
+                <Button
+                  variant="text"
+                  endIcon={<ArrowForwardIcon />}
+                  size="large"
+                  sx={{
+                    maxWidth: 200,
+                    textTransform: "none",
+                    color: "white",
+                  }}
+                >
+                  WhitePaper
+                </Button>
+              </Stack>
               <RedesSociales />
             </Stack>
           </AnimateWhileView>

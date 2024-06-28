@@ -15,6 +15,7 @@ import {
 } from "@mui/material";
 import Tab from "@mui/material/Tab";
 import { PieChart } from "@mui/x-charts/PieChart";
+import MoonShotImage from "common/assets/MoonShot.png";
 import AnimatedTitle from "common/components/AnimatedTitle";
 import AnimateWhileView from "common/components/AnimateWhileView";
 import Section from "common/components/Section";
@@ -74,6 +75,14 @@ const TokenomicsSection = () => {
               fontWeight: 900,
             }}
           />
+        </AnimateWhileView>
+        <AnimateWhileView anchor="left">
+          <Stack direction="row" spacing={2} alignItems="center">
+            <Typography variant="h5" color="text.primary">
+              Launch on
+            </Typography>
+            <img src={MoonShotImage} height={60} width={220} />
+          </Stack>
         </AnimateWhileView>
         <Grid
           container

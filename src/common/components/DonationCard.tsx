@@ -135,11 +135,6 @@ const DonationCard: React.FC<DonationCardProps> = ({
           </List>
         </Stack>
       </CardContent>
-      {/* <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-      </CardActions> */}
     </Card>
   );
 };
