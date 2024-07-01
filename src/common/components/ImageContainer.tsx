@@ -1,5 +1,4 @@
 import { Paper, PaperProps } from "@mui/material";
-import { DEFAULT_BORDER_RADIUS, DEFAULT_ELEVATION } from "common/constants";
 import { motion } from "framer-motion";
 import React from "react";
 
@@ -16,12 +15,12 @@ const ImageContainer: React.FC<ImageContainerProps> = ({ src, sx }) => {
       initial={{ opacity: 0, bottom: 10 }}
       whileInView={{ opacity: 1, bottom: 0 }}
       transition={{ delay: 0.2 }}
-      elevation={DEFAULT_ELEVATION}
+      elevation={4}
       sx={{
         height: { md: 400, lg: 550 },
         width: "100%",
         maxWidth: 430,
-        borderRadius: DEFAULT_BORDER_RADIUS,
+        borderRadius: 20,
         outlineColor: (theme) => theme.palette.primary.main,
         outlineWidth: 2.5,
         outlineStyle: "dashed",

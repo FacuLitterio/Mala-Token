@@ -11,25 +11,21 @@ import * as React from "react";
 import { PAGES } from "./AppBar";
 import RedesSociales from "./RedesSociales";
 
-type Anchor = "right";
-
 const DrawerMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
   isOpen,
   onClose: onClose,
 }) => {
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
+  const toggleDrawer = (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (
+      event.type === "keydown" &&
+      ((event as React.KeyboardEvent).key === "Tab" ||
+        (event as React.KeyboardEvent).key === "Shift")
+    ) {
+      return;
+    }
 
-      onClose();
-    };
+    onClose();
+  };
 
   return (
     <div>
@@ -37,8 +33,8 @@ const DrawerMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
         <Box
           sx={{ width: 300 }}
           role="presentation"
-          onClick={toggleDrawer("right", false)}
-          onKeyDown={toggleDrawer("right", false)}
+          onClick={toggleDrawer}
+          onKeyDown={toggleDrawer}
         >
           <List>
             {PAGES.map((page) => (

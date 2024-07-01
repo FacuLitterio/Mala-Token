@@ -98,6 +98,18 @@ const TokenomicsSection = () => {
               />
             </Stack>
           </Grid>
+
+          <Grid item xs={12} md={3}>
+            <Stack alignItems="center">
+              <AnimatedTitle text="Tax" variant="h3" color="text.primary" />
+              <AnimatedTitle
+                text="0%"
+                variant="h3"
+                color="text.primary"
+                fontWeight={600}
+              />
+            </Stack>
+          </Grid>
           <Grid item xs={12} md={3}>
             <Stack alignItems="center">
               <AnimatedTitle
@@ -107,17 +119,6 @@ const TokenomicsSection = () => {
               />
               <AnimatedTitle
                 text="Renounced"
-                variant="h3"
-                color="text.primary"
-                fontWeight={600}
-              />
-            </Stack>
-          </Grid>
-          <Grid item xs={12} md={3}>
-            <Stack alignItems="center">
-              <AnimatedTitle text="Tax" variant="h3" color="text.primary" />
-              <AnimatedTitle
-                text="0%"
                 variant="h3"
                 color="text.primary"
                 fontWeight={600}
