@@ -32,12 +32,12 @@ const TIMELINE_INFO = [
         isComplete: true,
       },
       {
-        text: "Start community building campaigns with engaging and educational content.",
-        isComplete: false,
+        text: "Start community-building campaigns with engaging content promoting economic freedom and individual liberty inspired by leaders like Javier Milei",
+        isComplete: true,
       },
       {
-        text: "Launch official channels on Twitter, Telegram, Discord, and Instagram.",
-        isComplete: false,
+        text: "Launch official channels on Twitter, Telegram, and Instagram.",
+        isComplete: true,
       },
     ],
   },
@@ -47,8 +47,9 @@ const TIMELINE_INFO = [
     title: "Phase 2: “Friedrich Hayek”",
     imageUrl: HayekImage,
     items: [
-      { text: "Token Launch on Solana Network.", isComplete: false },
-      { text: "DexScreener & DexTools Ads.", isComplete: false },
+      { text: "Token Launch on Solana Network.", isComplete: true },
+      { text: "DexScreener & DexTools Ads.", isComplete: true },
+      { text: "BirdEye Ads.", isComplete: false },
       { text: "1,000 Holders", isComplete: false },
       { text: "500 Twitter & Instagram Followers.", isComplete: false },
     ],
@@ -87,10 +88,6 @@ const TIMELINE_INFO = [
     items: [
       { text: "10,000 Holders", isComplete: false },
       {
-        text: "Distribute Airdrops totaling 0.3% of the Supply",
-        isComplete: false,
-      },
-      {
         text: "Start donations to ONGs to help the most needy dogs.",
         isComplete: false,
       },
@@ -119,10 +116,6 @@ const TIMELINE_INFO = [
         text: "Continue Expanding the Freedom Ideas",
         isComplete: false,
       },
-      {
-        text: "Distribute Airdrops totaling 0.3% of the Supply",
-        isComplete: false,
-      },
     ],
   },
   {
@@ -136,12 +129,9 @@ const TIMELINE_INFO = [
         isComplete: false,
       },
       { text: "100,000 Twitter & Instagram Followers", isComplete: false },
+
       {
-        text: "Distribute Airdrops totaling 0.5% of the Supply",
-        isComplete: false,
-      },
-      {
-        text: "Launch NFTs",
+        text: "Launch Libertarian NFTs",
         isComplete: false,
       },
     ],

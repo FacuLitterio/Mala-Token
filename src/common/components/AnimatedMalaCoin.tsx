@@ -76,7 +76,6 @@ const AnimatedMalaCoin: React.FC = () => {
 
       const animate = () => {
         mesh.rotation.x += 0.01;
-        mesh.rotation.y += 0.0007;
         requestAnimationFrame(animate);
         renderer?.render(scene!, camera!);
       };

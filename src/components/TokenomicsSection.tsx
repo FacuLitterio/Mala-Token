@@ -30,14 +30,7 @@ import { useSnackbar } from "notistack";
 import { useState } from "react";
 
 const TOKENOMICS = [
-  { label: "LP Burned - 950,000,000 $MALA", value: 950000000 },
-  { label: "Donations - 20,000,000 $MALA", value: 20000000 },
-  { label: "Marketing & Partnerships - 10,000,000 $MALA", value: 10000000 },
-  {
-    label: "Community Rewards & Airdrops - 10,000,000 $MALA",
-    value: 10000000,
-  },
-  { label: "Team & Development - 10,000,000 $MALA", value: 10000000 },
+  { label: "LP Burned - 1,000,000,000 $MALA", value: 1000000000 },
 ];
 
 const TokenomicsSection = () => {
@@ -81,7 +74,7 @@ const TokenomicsSection = () => {
             <Typography variant="h5" color="text.primary">
               Launch on
             </Typography>
-            <img src={MoonShotImage} height={60} width={220} />
+            <img src={MoonShotImage} height={40} width={180} />
           </Stack>
         </AnimateWhileView>
         <Grid
@@ -90,7 +83,7 @@ const TokenomicsSection = () => {
           sx={{ pt: { xs: 3, md: 5 } }}
           rowSpacing={3}
         >
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <Stack alignItems="center">
               <AnimatedTitle
                 text="LP Burned"
@@ -105,7 +98,7 @@ const TokenomicsSection = () => {
               />
             </Stack>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <Stack alignItems="center">
               <AnimatedTitle
                 text="Ownership"
@@ -120,11 +113,22 @@ const TokenomicsSection = () => {
               />
             </Stack>
           </Grid>
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={3}>
             <Stack alignItems="center">
               <AnimatedTitle text="Tax" variant="h3" color="text.primary" />
               <AnimatedTitle
                 text="0%"
+                variant="h3"
+                color="text.primary"
+                fontWeight={600}
+              />
+            </Stack>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Stack alignItems="center">
+              <AnimatedTitle text="PreSale" variant="h3" color="text.primary" />
+              <AnimatedTitle
+                text="No"
                 variant="h3"
                 color="text.primary"
                 fontWeight={600}
@@ -150,14 +154,6 @@ const TokenomicsSection = () => {
                 value="2"
                 sx={{
                   color: value !== "2" ? "white" : undefined,
-                  textTransform: "none",
-                }}
-              />
-              <Tab
-                label="Holding Wallets"
-                value="3"
-                sx={{
-                  color: value !== "3" ? "white" : undefined,
                   textTransform: "none",
                 }}
               />

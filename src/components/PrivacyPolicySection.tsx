@@ -1,4 +1,4 @@
-import { Avatar, Button, Grid, Stack, Typography } from "@mui/material";
+import { Avatar, Button, Grid, Link, Stack, Typography } from "@mui/material";
 import MagaLogoImage from "common/assets/MagaLogo.png";
 import RedesSociales from "common/components/RedesSociales";
 import Section from "common/components/Section";
@@ -10,13 +10,21 @@ const PrivacyPolicySection = () => {
         <Grid item xs={12} sm={10} md={8} lg={5}>
           <Stack spacing={2} alignItems="center">
             <Avatar src={MagaLogoImage} sx={{ height: 100, width: 100 }} />
-            <Button
-              variant="outlined"
-              size="large"
-              sx={{ color: "white", borderColor: "white" }}
+            <Link
+              href="/files/PrivacyPolicyMala.pdf"
+              variant="body2"
+              color="background.paper"
+              target="_blank"
             >
-              Privacy Policy
-            </Button>
+              <Button
+                variant="outlined"
+                size="large"
+                sx={{ color: "white", borderColor: "white" }}
+              >
+                Privacy Policy
+              </Button>
+            </Link>
+
             <Typography variant="body1" color="inherit" textAlign="center">
               contact@malamemecoin.com
             </Typography>

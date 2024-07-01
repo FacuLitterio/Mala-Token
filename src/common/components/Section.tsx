@@ -3,7 +3,7 @@ import React, { PropsWithChildren } from "react";
 
 type SectionProps = PropsWithChildren<ContainerProps>;
 
-const Section: React.FC<SectionProps> = ({ children, ...rest }) => {
+const Section: React.FC<SectionProps> = ({ children, sx, ...rest }) => {
   return (
     <Container
       component="section"
@@ -11,6 +11,7 @@ const Section: React.FC<SectionProps> = ({ children, ...rest }) => {
         width: 1,
         p: 3,
         mt: { xs: 5, sm: 6, xl: 12 },
+        ...sx,
       }}
       {...rest}
     >

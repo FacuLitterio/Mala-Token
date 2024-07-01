@@ -22,7 +22,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ angle }) => {
         borderStyle: "solid",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
         bgcolor: "background.paper",
-        mt: 16,
+        mt: { xs: 25, lg: 16 },
         zIndex: 5,
       }}
     >

@@ -21,6 +21,7 @@
     "@react-three/drei": "^9.107.0",
     "@react-three/fiber": "^8.16.8",
     "framer-motion": "^11.2.6",
+    "mui-audio-player-plus": "^1.0.6",
     "notistack": "^3.0.1",
     "popmotion": "^11.0.5",
     "react": "^18.2.0",
@@ -30,6 +31,7 @@
     "react-material-ui-carousel": "^2.3.11",
     "react-number-format": "^5.3.4",
     "react-scroll": "^1.9.0",
+    "react-simple-player": "^1.1.0",
     "three": "^0.165.0"
   },
   "devDependencies": {

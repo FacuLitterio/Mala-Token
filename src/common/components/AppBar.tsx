@@ -108,7 +108,7 @@ const AppBar: React.FC<{ onChangeMenu: () => void }> = ({ onChangeMenu }) => {
           <Box
             sx={{
               height: 64,
-              mt: 1,
+              mt: 2,
               bgcolor: "#212121",
               borderRadius: 20,
               p: 2,

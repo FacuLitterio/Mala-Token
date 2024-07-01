@@ -16,7 +16,7 @@ const DONATIONS_INFO = [
     title: "Proyecto 4 Pico",
     subtitle: "Buenos Aires, Argentina",
     description:
-      "Estamos dedicados a apoyar el bienestar animal a través de donaciones a organizaciones benéficas locales. Con su ayuda, podemos hacer una diferencia significativa en la vida de muchos animales necesitados.",
+      "We are dedicated to supporting animal welfare through donations to local charities. With your help, we can make a significant difference in the lives of many animals in need.",
     type: "Crypto",
     date: "???",
     target: "10,000 Holders",
@@ -29,7 +29,7 @@ const DONATIONS_INFO = [
     title: "ARAF",
     subtitle: "Ushuaia, Argentina",
     description:
-      "ARAF es una Asociación sin fines de lucro, dedicados a la protección de los animales y a la lucha del respeto por su vida, contra la eutanasia, el maltrato, el sufrimiento, el abandono y a favor del control de su reproducción con métodos éticos.",
+      "ARAF is a non-profit association dedicated to the protection of animals and the fight for respect for their lives, against euthanasia, mistreatment, suffering, abandonment, and in favor of controlling their reproduction with ethical methods.",
     type: "Crypto",
     date: "???",
     target: "50,000 Holders",
@@ -42,7 +42,7 @@ const DONATIONS_INFO = [
     title: "Patitas de San Vicente",
     subtitle: "Buenos Aires, Argentina",
     description:
-      "Rescate, recupero, castración y adopción responsable de perros abandonados y maltratados. Concientización sobre tenencia responsable de perros y gatos.",
+      "Rescue, recovery, neutering, and responsible adoption of abandoned and mistreated dogs. Raising awareness about responsible ownership of dogs and cats.",
     type: "Crypto",
     date: "???",
     target: "100,000 Holders",

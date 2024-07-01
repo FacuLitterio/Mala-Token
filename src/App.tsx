@@ -1,11 +1,12 @@
-import { ThemeProvider } from "@emotion/react";
 import {
-  Box,
+  createTheme,
   CssBaseline,
   PaletteMode,
-  createTheme,
   responsiveFontSizes,
+  ThemeProvider,
 } from "@mui/material";
+import Box from "@mui/material/Box";
+import CustomAudioPlayer from "common/components/AudioPlayer";
 import DrawerMenu from "common/components/DrawerMenu";
 import DonationsSection from "components/DonationsSection";
 import FlagSection from "components/FlagSection";
@@ -72,6 +73,7 @@ const App = () => {
           <RoadmapSection />
           <HowBuySection />
           <PrivacyPolicySection />
+          <CustomAudioPlayer />
         </Box>
       </ThemeProvider>
     </ColorModeContext.Provider>
