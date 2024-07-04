@@ -42,29 +42,34 @@ const FlagSection = () => {
               backgroundImage: `url(${BanderaArgentina})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
-              opacity: 0.05,
+              opacity: 0.25,
               backgroundRepeat: "no-repeat",
             }}
           />
           <Paper
             sx={{
-              height: 1,
-              maxHeight: 350,
+              height: 440,
               width: 1,
               maxWidth: 700,
               zIndex: 10,
+              background: "rgba(255, 255, 255, 0.2)",
+              color: "text.primary",
+              borderRadius: 10,
+              boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+              backdropFilter: "blur(5px)",
+              WebkitBackdropFilter: "blur(5px)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
               p: 4,
-              border: (theme) => `4px solid ${theme.palette.primary.main}`,
             }}
           >
-            <Stack spacing={6} width={1}>
+            <Stack spacing={10} width={1} alignItems="center">
+              <Rating
+                defaultValue={5}
+                readOnly
+                size="large"
+                sx={{ color: "#6BC2E4" }}
+              />
               <Stack spacing={1} alignItems="center">
-                <Rating
-                  defaultValue={5}
-                  readOnly
-                  size="large"
-                  sx={{ color: (theme) => theme.palette.primary.main }}
-                />
                 <Typography
                   variant="h3"
                   textAlign="center"

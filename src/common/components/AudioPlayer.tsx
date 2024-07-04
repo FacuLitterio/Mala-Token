@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import IntroMusic from "common/assets/IntroMusic.mp3";
+import IntroMusic from "common/assets/Metamorphosis.mp3";
 import { Player } from "react-simple-player";
 
 const CustomAudioPlayer = () => {

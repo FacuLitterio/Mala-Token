@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import MagaIcon from "common/assets/MagaLogo.png"; // Asegúrate de que la ruta sea correcta
+import MalaLogo from "common/assets/MalaLogo.png"; // Asegúrate de que la ruta sea correcta
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
@@ -56,7 +56,7 @@ const AnimatedMalaCoin: React.FC = () => {
       pointLightTop.position.set(0, 3, 2);
       scene.add(pointLightTop);
 
-      const texture = new THREE.TextureLoader().load(MagaIcon);
+      const texture = new THREE.TextureLoader().load(MalaLogo);
 
       const material = new THREE.MeshStandardMaterial({
         map: texture,

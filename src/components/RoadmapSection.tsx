@@ -39,6 +39,10 @@ const TIMELINE_INFO = [
         text: "Launch official channels on Twitter, Telegram, and Instagram.",
         isComplete: true,
       },
+      {
+        text: "Launch official Website.",
+        isComplete: true,
+      },
     ],
   },
   {
@@ -75,7 +79,7 @@ const TIMELINE_INFO = [
         isComplete: false,
       },
       {
-        text: "MEX Listing.",
+        text: "MEXC Listing.",
         isComplete: false,
       },
     ],

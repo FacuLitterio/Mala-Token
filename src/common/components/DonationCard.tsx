@@ -40,11 +40,7 @@ const DonationCard: React.FC<DonationCardProps> = ({
       }}
     >
       <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: "#FFF" }}>
-            <img src={avatar} style={{ width: "100%" }} />
-          </Avatar>
-        }
+        avatar={<Avatar sx={{ bgcolor: "#FFF" }} src={avatar} />}
         title={title}
         titleTypographyProps={{ color: "#333333" }}
         subheader={

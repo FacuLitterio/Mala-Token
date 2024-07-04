@@ -2,7 +2,7 @@ import { PaletteMode, ThemeOptions } from "@mui/material";
 
 const commonTokens = (): ThemeOptions["palette"] => ({
   primary: {
-    main: "#5B5F97",
+    main: "#71A7D9",
   },
   background: {
     paper: "#1E1F31",

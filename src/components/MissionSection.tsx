@@ -1,6 +1,6 @@
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Avatar, Button, Chip, Grid, Hidden, Stack } from "@mui/material";
-import MagaIcon from "common/assets/MagaLogo.png";
+import Image from "common/assets/OurMissionMilei.jpg";
 import AnimatedSubtitle from "common/components/AnimatedSubtitle";
 import AnimatedTitle from "common/components/AnimatedTitle";
 import AnimateWhileView from "common/components/AnimateWhileView";
@@ -14,7 +14,11 @@ const MissionSection = () => {
         <Hidden smDown>
           <Grid item xs={4} sm={6} md={5}>
             <AnimateWhileView anchor="left">
-              <Avatar src={MagaIcon} sx={{ height: 380, width: 380 }} />
+              <Avatar
+                src={Image}
+                sx={{ height: 500, width: 380 }}
+                variant="rounded"
+              />
             </AnimateWhileView>
           </Grid>
         </Hidden>
@@ -27,7 +31,8 @@ const MissionSection = () => {
                 sx={{ maxWidth: 120 }}
               />
               <AnimatedTitle text="Our Mission" primaryWord="Our" />
-              <AnimatedSubtitle text="Introducing a token designed to not only go viral but also champion economic freedom and free market policies inspired by Javier Milei. Our mission extends beyond financial success, as we commit to improving the lives of stray dogs in Argentina. Through decentralization, we empower individuals and promote the adoption of liberal economic policies. A portion of our proceeds will be dedicated to enhancing the living conditions of homeless dogs, reflecting our dedication to social responsibility." />
+              <AnimatedSubtitle text="Introducing our groundbreaking token, engineered to captivate the world and revolutionize the way we view economic freedom and free market policies, drawing inspiration from the visionary economist Javier Milei. Our mission transcends mere financial success; we are dedicated to making a profound impact on society and the world at large." />
+              <AnimatedSubtitle text="Our project stands at the intersection of innovation, economic empowerment, and social responsibility. By investing in our token, you are not only participating in a financial revolution but also contributing to a noble cause that seeks to make a tangible difference in the world. Join us in championing economic freedom, decentralization, and the well-being of stray dogs. Together, we can create a future that is prosperous, inclusive, and compassionate." />
               <Button
                 variant="contained"
                 endIcon={<ArrowForwardIcon />}

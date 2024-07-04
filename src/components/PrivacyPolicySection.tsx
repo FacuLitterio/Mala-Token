@@ -1,5 +1,5 @@
 import { Avatar, Button, Grid, Link, Stack, Typography } from "@mui/material";
-import MagaLogoImage from "common/assets/MagaLogo.png";
+import MalaLogo from "common/assets/MalaLogo.png";
 import RedesSociales from "common/components/RedesSociales";
 import Section from "common/components/Section";
 
@@ -9,25 +9,45 @@ const PrivacyPolicySection = () => {
       <Grid container justifyContent="center" sx={{ mt: 4 }}>
         <Grid item xs={12} sm={10} md={8} lg={5}>
           <Stack spacing={2} alignItems="center">
-            <Avatar src={MagaLogoImage} sx={{ height: 100, width: 100 }} />
-            <Link
-              href="/files/PrivacyPolicyMala.pdf"
-              variant="body2"
-              color="background.paper"
-              target="_blank"
-            >
-              <Button
-                variant="outlined"
-                size="large"
-                sx={{ color: "white", borderColor: "white" }}
+            <Avatar src={MalaLogo} sx={{ height: 100, width: 100 }} />
+            <Stack direction="row" spacing={3} justifyContent="center">
+              <Link
+                href="/files/WhitePaperMala.pdf"
+                variant="body2"
+                color="background.paper"
+                target="_blank"
               >
-                Privacy Policy
-              </Button>
-            </Link>
-
-            <Typography variant="body1" color="inherit" textAlign="center">
-              contact@malamemecoin.com
-            </Typography>
+                <Button
+                  variant="outlined"
+                  size="large"
+                  sx={{
+                    color: "white",
+                    borderColor: "white",
+                    width: 200,
+                  }}
+                >
+                  WhitePaper
+                </Button>
+              </Link>
+              <Link
+                href="/files/PrivacyPolicyMala.pdf"
+                variant="body2"
+                color="background.paper"
+                target="_blank"
+              >
+                <Button
+                  variant="outlined"
+                  size="large"
+                  sx={{
+                    color: "white",
+                    borderColor: "white",
+                    width: 200,
+                  }}
+                >
+                  Privacy Policy
+                </Button>
+              </Link>
+            </Stack>
             <Typography variant="body2" color="inherit" textAlign="center">
               Please note that "Make Argentina Libertarian Again" Token is an
               entertainment cryptocurrency and is not associated with or

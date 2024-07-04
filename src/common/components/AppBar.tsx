@@ -15,7 +15,7 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import MagaLogo from "common/assets/MagaLogo.png";
+import MalaLogo from "common/assets/MalaLogo.png";
 import onScrollToSection from "common/helpers/onScrollToSection";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -127,7 +127,7 @@ const AppBar: React.FC<{ onChangeMenu: () => void }> = ({ onChangeMenu }) => {
                 onClick={() => onScrollToSection("Inicio")}
               >
                 <Avatar
-                  src={MagaLogo}
+                  src={MalaLogo}
                   onClick={() => onScrollToSection("Inicio")}
                 />
                 <Typography

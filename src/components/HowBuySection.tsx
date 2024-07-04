@@ -48,9 +48,12 @@ const HowBuySection = () => {
             <AnimatedTitle text="How Buy Using $SOL" />
             <Box sx={{ mt: 4 }}>
               {ACCORDION_ITEMS.map((item) => (
-                <Accordion key={item.id} sx={{ bgcolor: "primary.main" }}>
+                <Accordion
+                  key={item.id}
+                  sx={{ bgcolor: "text.primary", color: "#444444" }}
+                >
                   <AccordionSummary
-                    expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
+                    expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1-content"
                     id="panel1-header"
                   >

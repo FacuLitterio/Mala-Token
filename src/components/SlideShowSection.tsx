@@ -1,4 +1,5 @@
-import { Box, Card, Grid, Typography } from "@mui/material";
+import { Avatar, Box, Card, Grid, Stack, Typography } from "@mui/material";
+import MalaLogo from "common/assets/MalaLogo.png";
 import { motion } from "framer-motion";
 
 type SlideshowProps = {
@@ -17,7 +18,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ angle }) => {
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
-        borderImage: "linear-gradient(#00cda0,  #fe00f8) 90",
+        borderImage: "linear-gradient(#6BC2E4,  #FFFFFF) 90",
         borderWidth: "4px",
         borderStyle: "solid",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
@@ -29,8 +30,10 @@ const Slideshow: React.FC<SlideshowProps> = ({ angle }) => {
       <Box
         component={motion.div}
         sx={{
+          height: 100,
           width: "100vw",
           display: "flex",
+          alignItems: "center",
           whiteSpace: "nowrap",
           p: 2,
         }}
@@ -64,14 +67,17 @@ const Slideshow: React.FC<SlideshowProps> = ({ angle }) => {
                   mx: 2,
                 }}
               >
-                <Typography
-                  sx={{
-                    fontSize: "2rem",
-                    color: "white",
-                  }}
-                >
-                  $MALA
-                </Typography>
+                <Stack spacing={2} direction="row" alignItems="center">
+                  <Avatar src={MalaLogo} sx={{ height: 60, width: 60 }} />
+                  <Typography
+                    sx={{
+                      fontSize: "2rem",
+                      color: "white",
+                    }}
+                  >
+                    $MALA
+                  </Typography>
+                </Stack>
               </Card>
             </Grid>
           </Grid>
