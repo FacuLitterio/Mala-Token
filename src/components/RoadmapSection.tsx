@@ -195,11 +195,11 @@ const RoadmapSection = () => {
                               sx={{
                                 height: 20,
                                 width: 20,
-                                color: "primary.main",
+                                bgcolor: "background.paper",
                               }}
                             >
                               {nestedItem.isComplete ? (
-                                <CheckCircleIcon color="success" />
+                                <CheckCircleIcon color="primary" />
                               ) : (
                                 <RadioButtonUncheckedIcon />
                               )}

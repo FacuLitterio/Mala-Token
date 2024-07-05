@@ -74,6 +74,16 @@ const AnimatedMalaCoin: React.FC = () => {
       mesh.rotation.x = 2;
       mesh.rotation.y = 1.5;
 
+      // Adding edge glow effect
+      const edgeGeometry = new THREE.EdgesGeometry(geometry);
+      const edgeMaterial = new THREE.LineBasicMaterial({
+        color: 0xffffff,
+        transparent: true,
+        opacity: 0.2,
+      });
+      const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
+      mesh.add(edges);
+
       const animate = () => {
         mesh.rotation.x += 0.01;
         requestAnimationFrame(animate);

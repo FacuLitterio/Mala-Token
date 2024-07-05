@@ -48,6 +48,9 @@ const PrivacyPolicySection = () => {
                 </Button>
               </Link>
             </Stack>
+            <Typography variant="h6" color="text.primary">
+              malamemecoin@gmail.com
+            </Typography>
             <Typography variant="body2" color="inherit" textAlign="center">
               Please note that "Make Argentina Libertarian Again" Token is an
               entertainment cryptocurrency and is not associated with or
