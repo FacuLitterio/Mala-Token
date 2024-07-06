@@ -21,7 +21,7 @@ const DONATIONS_INFO = [
     date: "???",
     target: "10,000 Holders",
     frequency: "One-Time",
-    amount: "2 ETH",
+    amount: "50 SOL",
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ const DONATIONS_INFO = [
     date: "???",
     target: "20,000 Holders",
     frequency: "One-Time",
-    amount: "4 ETH",
+    amount: "100 SOL",
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const DONATIONS_INFO = [
     date: "???",
     target: "50,000 Holders",
     frequency: "One-Time",
-    amount: "8 ETH",
+    amount: "250 SOL",
   },
 ];
 

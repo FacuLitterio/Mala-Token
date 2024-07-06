@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import MalaLogo from "common/assets/MalaLogo.png"; // Asegúrate de que la ruta sea correcta
+import { gsap } from "gsap";
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
@@ -74,6 +75,9 @@ const AnimatedMalaCoin: React.FC = () => {
       mesh.rotation.x = 2;
       mesh.rotation.y = 1.5;
 
+      // Inicializa la posición y del mesh por encima de la cámara
+      mesh.position.y = 10;
+
       // Adding edge glow effect
       const edgeGeometry = new THREE.EdgesGeometry(geometry);
       const edgeMaterial = new THREE.LineBasicMaterial({
@@ -83,6 +87,14 @@ const AnimatedMalaCoin: React.FC = () => {
       });
       const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
       mesh.add(edges);
+
+      // Utiliza GSAP para animar la posición y del mesh de forma suave
+      gsap.to(mesh.position, {
+        y: 0,
+        duration: 3, // Duración de la animación en segundos
+
+        ease: "power2.out", // Tipo de easing
+      });
 
       const animate = () => {
         mesh.rotation.x += 0.01;

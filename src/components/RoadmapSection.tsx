@@ -51,11 +51,12 @@ const TIMELINE_INFO = [
     title: "Phase 2: “Friedrich Hayek”",
     imageUrl: HayekImage,
     items: [
-      { text: "Token Launch on Solana Network.", isComplete: true },
+      { text: "Token Launch on MoonShot.", isComplete: true },
       { text: "DexScreener & DexTools Ads.", isComplete: true },
       { text: "BirdEye Ads.", isComplete: false },
       { text: "1,000 Holders", isComplete: false },
       { text: "500 Twitter & Instagram Followers.", isComplete: false },
+      { text: "Expand the Community", isComplete: false },
     ],
   },
   {
@@ -120,6 +121,14 @@ const TIMELINE_INFO = [
         text: "Continue Expanding the Freedom Ideas",
         isComplete: false,
       },
+      {
+        text: "Publish Educational Articles on our blog",
+        isComplete: false,
+      },
+      {
+        text: "New Partnerships & Influencers",
+        isComplete: false,
+      },
     ],
   },
   {
@@ -133,9 +142,16 @@ const TIMELINE_INFO = [
         isComplete: false,
       },
       { text: "100,000 Twitter & Instagram Followers", isComplete: false },
-
+      {
+        text: "Create Educational Videos on the Fundamentals of Libertarian Economics",
+        isComplete: false,
+      },
       {
         text: "Launch Libertarian NFTs",
+        isComplete: false,
+      },
+      {
+        text: "Launch the First Web3 Libertarian Economic School.",
         isComplete: false,
       },
     ],

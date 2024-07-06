@@ -69,14 +69,19 @@ const Slideshow: React.FC<SlideshowProps> = ({ angle }) => {
               >
                 <Stack spacing={2} direction="row" alignItems="center">
                   <Avatar src={MalaLogo} sx={{ height: 60, width: 60 }} />
-                  <Typography
-                    sx={{
-                      fontSize: "2rem",
-                      color: "white",
-                    }}
-                  >
-                    $MALA
-                  </Typography>
+                  <Stack alignItems="center">
+                    <Typography
+                      sx={{
+                        fontSize: "2rem",
+                        color: "white",
+                      }}
+                    >
+                      $MALA
+                    </Typography>
+                    <Typography variant="caption" color="text.primary">
+                      The First Libertarian Memecoin
+                    </Typography>
+                  </Stack>
                 </Stack>
               </Card>
             </Grid>
