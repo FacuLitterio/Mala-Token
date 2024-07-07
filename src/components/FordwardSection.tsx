@@ -91,14 +91,13 @@ const FordwardSection = () => {
                     label="Introducing"
                     variant="outlined"
                     avatar={<Avatar src={MoonShotSVG} />}
-                    sx={{ maxWidth: 150 }}
                   />
                 </Stack>
                 <AnimatedTitle
                   text="$MALA Movement on the BlockChain"
                   primaryWord="$MALA"
                 />
-                <AnimatedSubtitle text="Inspired by the revolutionary ideas of Javier Milei, $MALA (Make Argentina Libertarian Again) promotes economic freedom and advocates for free market policies. Our mission extends beyond financial interests, supporting social causes like improving the lives of stray dogs in Argentina. We aim to create a decentralized ecosystem rooted in individual liberty and economic empowerment. $MALA offers a unique way to support libertarian principles and contribute to charitable causes, without any promise of financial return or investment potential. This token is purely for entertainment and advocacy purposes." />
+                <AnimatedSubtitle text="Inspired by the revolutionary ideas of Javier Milei, $MALA (Make Argentina Libertarian Again) promotes economic freedom and advocates for free market policies. Our mission extends beyond financial interests, supporting social causes like improving the lives of stray dogs in Argentina. We aim to create a decentralized ecosystem rooted in individual liberty and economic empowerment. $MALA offers a unique way to support libertarian principles and contribute to charitable causes." />
                 <Stack direction="row" spacing={2}>
                   <Button
                     variant="contained"
