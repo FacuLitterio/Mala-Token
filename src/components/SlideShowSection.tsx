@@ -80,7 +80,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ angle }) => {
                       $MALA
                     </Typography>
                     <Typography variant="caption" color="text.primary">
-                      The First Libertarian Memecoin
+                      Make Argentina Libertarian Again
                     </Typography>
                   </Stack>
                 </Stack>

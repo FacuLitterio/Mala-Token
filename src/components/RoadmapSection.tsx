@@ -1,5 +1,4 @@
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import RadioButtonUncheckedIcon from "@mui/icons-material/RadioButtonUnchecked";
 import Timeline from "@mui/lab/Timeline";
 import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
@@ -7,7 +6,8 @@ import TimelineDot from "@mui/lab/TimelineDot";
 import TimelineItem from "@mui/lab/TimelineItem";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineSeparator from "@mui/lab/TimelineSeparator";
-import { Avatar, Chip, Grid, List, ListItem, Stack } from "@mui/material";
+import { Avatar, Box, Chip, Grid, List, ListItem, Stack } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 import Typography from "@mui/material/Typography";
 import AdamSmithImage from "common/assets/AdamSmith.jpg";
 import HayekImage from "common/assets/hayek1.png";
@@ -217,7 +217,9 @@ const RoadmapSection = () => {
                               {nestedItem.isComplete ? (
                                 <CheckCircleIcon color="primary" />
                               ) : (
-                                <RadioButtonUncheckedIcon />
+                                <Box sx={{ width: 1, height: 1 }}>
+                                  <CircularProgress size={20} />
+                                </Box>
                               )}
                             </Avatar>
                             <Typography variant="body2">

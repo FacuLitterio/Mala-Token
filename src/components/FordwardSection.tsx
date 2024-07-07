@@ -18,8 +18,15 @@ import AnimatedTitle from "common/components/AnimatedTitle";
 import AnimateWhileView from "common/components/AnimateWhileView";
 import RedesSociales from "common/components/RedesSociales";
 import Section from "common/components/Section";
+import { useCallback } from "react";
 
 const FordwardSection = () => {
+  const handleClickBuyOnPhotom = useCallback(() => {
+    const URL = import.meta.env.VITE_PHOTOM_MALA_URL;
+    if (!URL) return;
+    window.open(URL, "_blank");
+  }, []);
+
   return (
     <Box
       sx={{
@@ -83,9 +90,9 @@ const FordwardSection = () => {
                   <Chip
                     label="Introducing"
                     variant="outlined"
+                    avatar={<Avatar src={MoonShotSVG} />}
                     sx={{ maxWidth: 150 }}
                   />
-                  <Avatar src={MoonShotSVG} sx={{ height: 25, width: 25 }} />
                 </Stack>
                 <AnimatedTitle
                   text="$MALA Movement on the BlockChain"
@@ -97,6 +104,7 @@ const FordwardSection = () => {
                     variant="contained"
                     startIcon={<ShoppingCartOutlinedIcon />}
                     size="large"
+                    onClick={handleClickBuyOnPhotom}
                     sx={{ maxWidth: 200, textTransform: "none" }}
                   >
                     Buy on Solana

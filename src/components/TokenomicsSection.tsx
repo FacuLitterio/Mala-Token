@@ -3,6 +3,9 @@ import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import {
+  Alert,
+  AlertTitle,
+  Avatar,
   Box,
   Chip,
   Grid,
@@ -16,31 +19,50 @@ import {
 import Tab from "@mui/material/Tab";
 import { PieChart } from "@mui/x-charts/PieChart";
 import MoonShotImage from "common/assets/MoonShot.png";
+import SolScanLogo from "common/assets/SolScan.png";
 import AnimatedTitle from "common/components/AnimatedTitle";
 import AnimateWhileView from "common/components/AnimateWhileView";
 import Section from "common/components/Section";
-
-import { useSnackbar } from "notistack";
-import { useState } from "react";
+import useCopyClipboard from "common/hooks/useCopyClipboard";
+import { useCallback, useState } from "react";
 
 const SOLANA_CA = import.meta.env.VITE_SOLANA_CA;
 
+const TOTAL_SUPPLY = 120000000;
 const TOKENOMICS = [
-  { label: "LP Burned - 1,000,000,000 $MALA", value: 1000000000 },
+  { label: "CEO & Founder - 20%", value: TOTAL_SUPPLY * 0.2 },
+  { label: "Donations - 30%", value: TOTAL_SUPPLY * 0.3 },
+  { label: "Team & Development - 20%", value: TOTAL_SUPPLY * 0.2 },
+  { label: "Marketing & Partnerships - 30%", value: TOTAL_SUPPLY * 0.3 },
 ];
 
 const TokenomicsSection = () => {
   const theme = useTheme();
-  const { enqueueSnackbar } = useSnackbar();
-  const [value, setValue] = useState("1");
+  const onCopyClipboard = useCopyClipboard();
+  const [value, setValue] = useState("2");
 
   const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
 
-  const onCopySolanaCA = async () => {
-    await navigator.clipboard.writeText(SOLANA_CA);
-    enqueueSnackbar("Copied");
+  const SolScanAvatar: React.FC<{ walletAddress: string | null }> = ({
+    walletAddress,
+  }) => {
+    const handleOpenSolScan = useCallback(() => {
+      if (!walletAddress) return;
+
+      const URL = `https://solscan.io/account/${walletAddress}`;
+
+      window.open(URL, "_blank");
+    }, [walletAddress]);
+
+    if (!walletAddress) return null;
+
+    return (
+      <IconButton onClick={handleOpenSolScan} size="small">
+        <Avatar src={SolScanLogo} sx={{ height: 25, width: 25 }} />
+      </IconButton>
+    );
   };
 
   return (
@@ -147,10 +169,18 @@ const TokenomicsSection = () => {
                 }}
               />
               <Tab
-                label="Token Distribution"
+                label="Team Distribution"
                 value="2"
                 sx={{
                   color: value !== "2" ? "white" : undefined,
+                  textTransform: "none",
+                }}
+              />
+              <Tab
+                label="Wallets Distribution"
+                value="3"
+                sx={{
+                  color: value !== "3" ? "white" : undefined,
                   textTransform: "none",
                 }}
               />
@@ -222,7 +252,7 @@ const TokenomicsSection = () => {
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
                         {SOLANA_CA}
-                        <IconButton onClick={onCopySolanaCA}>
+                        <IconButton onClick={() => onCopyClipboard(SOLANA_CA)}>
                           <ContentCopyIcon />
                         </IconButton>
                       </Typography>
@@ -241,43 +271,203 @@ const TokenomicsSection = () => {
                 justifyContent: "center",
               }}
             >
-              <Box
-                sx={{
-                  minHeight: 320,
-                  width: 1,
-                  maxWidth: 800,
-                }}
-              >
-                <PieChart
-                  colors={[
-                    theme.palette.primary.main,
-                    "#FF6B6B",
-                    "#FFC857",
-                    "#A3DE83",
-                    "#B990DA",
-                    "#136F63",
-                  ]}
-                  series={[
-                    {
-                      data: TOKENOMICS,
-                      innerRadius: 50,
-                      paddingAngle: 5,
-                      cornerRadius: 15,
-                      cx: 150,
-                      cy: 150,
-                      highlightScope: { faded: "global", highlighted: "item" },
-                      faded: {
-                        innerRadius: 30,
-                        additionalRadius: -30,
-                        color: "gray",
+              <Stack spacing={10} alignItems="center" width={1}>
+                <Alert
+                  variant="outlined"
+                  severity="info"
+                  sx={{ width: 1, maxWidth: 750 }}
+                >
+                  <AlertTitle sx={{ color: "text.primary" }}>
+                    Important
+                  </AlertTitle>
+                  <Typography variant="body2" paragraph color="text.primary">
+                    We are committed to transparency and building trust. This
+                    project is not a scam; it is a serious, trustworthy venture.
+                    To prove our commitment,{" "}
+                    <b>
+                      {" "}
+                      the team will only purchase 120M Tokens at the time of the
+                      token launch on MoonShot and will not buy more
+                    </b>
+                    . The tokens will be distributed into the wallets when
+                    liquidity migrates to Raydium. We will also share the
+                    addresses of the wallets where the tokens are distributed.
+                    This ensures full transparency and fairness.
+                  </Typography>
+                </Alert>
+                <Box
+                  sx={{
+                    height: 300,
+                    width: 1,
+                    maxWidth: 700,
+                  }}
+                >
+                  <PieChart
+                    sx={{
+                      width: 1,
+                      maxWidth: 800,
+                    }}
+                    colors={[
+                      theme.palette.primary.main,
+                      "#FF6B6B",
+                      "#FFC857",
+                      "#A3DE83",
+                      "#B990DA",
+                      "#136F63",
+                    ]}
+                    series={[
+                      {
+                        data: TOKENOMICS,
+                        innerRadius: 50,
+                        paddingAngle: 5,
+                        cornerRadius: 15,
+                        cx: 150,
+                        cy: 150,
+                        highlightScope: {
+                          faded: "global",
+                          highlighted: "item",
+                        },
+                        faded: {
+                          innerRadius: 30,
+                          additionalRadius: -30,
+                          color: "gray",
+                        },
                       },
-                    },
-                  ]}
-                  margin={{ right: 5 }}
-                />
-              </Box>
+                    ]}
+                    margin={{ right: 5 }}
+                  />
+                </Box>
+              </Stack>
             </TabPanel>
           )}
+          <TabPanel value="3" sx={{ width: 1 }}>
+            <Grid container sx={{ display: "flex", justifyContent: "center" }}>
+              <Grid item xs={12} md={10} lg={8}>
+                <List sx={{ bgcolor: "#FFF" }}>
+                  <ListItem divider>
+                    <Stack
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="center"
+                      sx={{ width: 1 }}
+                    >
+                      <Typography variant="body2" color="text.secondary">
+                        CEO & Founder Wallet [Token Creator]
+                      </Typography>
+                      <Stack direction="row" alignItems="center">
+                        <Typography variant="body2" color="text.secondary">
+                          {import.meta.env.VITE_CEO_WALLET_CA}
+                        </Typography>
+                        <IconButton
+                          size="small"
+                          onClick={() =>
+                            onCopyClipboard(import.meta.env.VITE_CEO_WALLET_CA)
+                          }
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                        <SolScanAvatar
+                          walletAddress={import.meta.env.VITE_CEO_WALLET_CA}
+                        />
+                      </Stack>
+                    </Stack>
+                  </ListItem>
+                  <ListItem divider>
+                    <Stack
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="center"
+                      sx={{ width: 1 }}
+                    >
+                      <Typography variant="body2" color="text.secondary">
+                        Donations Wallet
+                      </Typography>
+                      <Stack direction="row" alignItems="center">
+                        <Typography variant="body2" color="text.secondary">
+                          {import.meta.env.VITE_DONATIONS_WALLET_CA}
+                        </Typography>
+                        <IconButton
+                          size="small"
+                          onClick={() =>
+                            onCopyClipboard(
+                              import.meta.env.VITE_DONATIONS_WALLET_CA
+                            )
+                          }
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                        <SolScanAvatar
+                          walletAddress={
+                            import.meta.env.VITE_DONATIONS_WALLET_CA
+                          }
+                        />
+                      </Stack>
+                    </Stack>
+                  </ListItem>
+                  <ListItem divider>
+                    <Stack
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="center"
+                      sx={{ width: 1 }}
+                    >
+                      <Typography variant="body2" color="text.secondary">
+                        Marketing & Partnerships
+                      </Typography>
+                      <Stack direction="row" alignItems="center">
+                        <Typography variant="body2" color="text.secondary">
+                          {import.meta.env.VITE_MARKETING_WALLET_CA}
+                        </Typography>
+                        <IconButton
+                          size="small"
+                          onClick={() =>
+                            onCopyClipboard(
+                              import.meta.env.VITE_MARKETING_WALLET_CA
+                            )
+                          }
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                        <SolScanAvatar
+                          walletAddress={
+                            import.meta.env.VITE_MARKETING_WALLET_CA
+                          }
+                        />
+                      </Stack>
+                    </Stack>
+                  </ListItem>
+                  <ListItem divider>
+                    <Stack
+                      direction="row"
+                      justifyContent="space-between"
+                      alignItems="center"
+                      sx={{ width: 1 }}
+                    >
+                      <Typography variant="body2" color="text.secondary">
+                        Team & Development
+                      </Typography>
+                      <Stack direction="row" alignItems="center">
+                        <Typography variant="body2" color="text.secondary">
+                          {import.meta.env.VITE_TEAM_WALLET_CA}
+                        </Typography>
+                        <IconButton
+                          size="small"
+                          onClick={() =>
+                            onCopyClipboard(import.meta.env.VITE_TEAM_WALLET_CA)
+                          }
+                        >
+                          <ContentCopyIcon />
+                        </IconButton>
+                        <SolScanAvatar
+                          walletAddress={import.meta.env.VITE_TEAM_WALLET_CA}
+                        />
+                      </Stack>
+                    </Stack>
+                  </ListItem>
+                </List>
+              </Grid>
+            </Grid>
+          </TabPanel>
         </TabContext>
       </Stack>
     </Section>

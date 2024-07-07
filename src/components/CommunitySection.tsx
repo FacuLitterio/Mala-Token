@@ -140,7 +140,7 @@ const CommunitySection = () => {
         height: { xs: 500, lg: 650 },
         borderBottom: border,
         borderTop: border,
-        mt: 5,
+        mt: 10,
         overflow: "hidden",
       }}
     >
@@ -175,13 +175,16 @@ const CommunitySection = () => {
         xs={12}
         md={7}
         sx={{
+          height: 1,
           overflow: "auto",
           px: 6,
           background: `url(${CommunityImage})`,
-          backgroundPosition: "0% 45%",
+          backgroundPosition: "0% 50%",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
+          display: "flex",
+          alignItems: "center",
         }}
       >
         <AnimateWhileView anchor="right">
@@ -193,7 +196,7 @@ const CommunitySection = () => {
               background: "rgba(255, 255, 255, 0.2)",
               borderRadius: "16px",
               boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-              backdropFilter: "blur(15px)",
+              backdropFilter: "blur(50px)",
               WebkitBackdropFilter: "blur(5px)",
               border: "1px solid rgba(255, 255, 255, 0.3)",
             }}
