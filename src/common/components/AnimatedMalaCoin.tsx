@@ -128,7 +128,7 @@ const AnimatedMalaCoin: React.FC = () => {
         maxHeight: 480,
         width: 1,
         maxWidth: 480,
-        transform: "scale(1.5)",
+        transform: "scale(1.6)",
       }}
     />
   );

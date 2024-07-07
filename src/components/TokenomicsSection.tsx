@@ -19,15 +19,11 @@ import MoonShotImage from "common/assets/MoonShot.png";
 import AnimatedTitle from "common/components/AnimatedTitle";
 import AnimateWhileView from "common/components/AnimateWhileView";
 import Section from "common/components/Section";
-import {
-  COMMUNITY_WALLET_CONTRACT_ADRESS,
-  DONATIONS_WALLET_CONTRACT_ADRESS,
-  MARKETING_WALLET_CONTRACT_ADRESS,
-  SOLANA_CONTRACT_ADRESS,
-  TEAM_WALLET_CONTRACT_ADRESS,
-} from "constants";
+
 import { useSnackbar } from "notistack";
 import { useState } from "react";
+
+const SOLANA_CA = import.meta.env.VITE_SOLANA_CA;
 
 const TOKENOMICS = [
   { label: "LP Burned - 1,000,000,000 $MALA", value: 1000000000 },
@@ -42,8 +38,8 @@ const TokenomicsSection = () => {
     setValue(newValue);
   };
 
-  const copyToClipboard = async (text: string) => {
-    await navigator.clipboard.writeText(text);
+  const onCopySolanaCA = async () => {
+    await navigator.clipboard.writeText(SOLANA_CA);
     enqueueSnackbar("Copied");
   };
 
@@ -225,7 +221,10 @@ const TokenomicsSection = () => {
                         Contract Address
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {SOLANA_CONTRACT_ADRESS}
+                        {SOLANA_CA}
+                        <IconButton onClick={onCopySolanaCA}>
+                          <ContentCopyIcon />
+                        </IconButton>
                       </Typography>
                     </Stack>
                   </ListItem>
@@ -279,107 +278,6 @@ const TokenomicsSection = () => {
               </Box>
             </TabPanel>
           )}
-
-          <TabPanel value="3" sx={{ width: 1 }}>
-            <Grid container sx={{ display: "flex", justifyContent: "center" }}>
-              <Grid item xs={12} md={10} lg={8}>
-                <List sx={{ bgcolor: "#FFF" }}>
-                  <ListItem divider>
-                    <Stack
-                      direction="row"
-                      justifyContent="space-between"
-                      alignItems="center"
-                      sx={{ width: 1 }}
-                    >
-                      <Typography variant="body2" color="text.secondary">
-                        Donations
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {DONATIONS_WALLET_CONTRACT_ADRESS}
-                        <IconButton
-                          size="small"
-                          onClick={() =>
-                            copyToClipboard(DONATIONS_WALLET_CONTRACT_ADRESS)
-                          }
-                        >
-                          <ContentCopyIcon />
-                        </IconButton>
-                      </Typography>
-                    </Stack>
-                  </ListItem>
-                  <ListItem divider>
-                    <Stack
-                      direction="row"
-                      justifyContent="space-between"
-                      alignItems="center"
-                      sx={{ width: 1 }}
-                    >
-                      <Typography variant="body2" color="text.secondary">
-                        Marketing & Partnerships
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {MARKETING_WALLET_CONTRACT_ADRESS}
-                        <IconButton
-                          size="small"
-                          onClick={() =>
-                            copyToClipboard(MARKETING_WALLET_CONTRACT_ADRESS)
-                          }
-                        >
-                          <ContentCopyIcon />
-                        </IconButton>
-                      </Typography>
-                    </Stack>
-                  </ListItem>
-                  <ListItem divider>
-                    <Stack
-                      direction="row"
-                      justifyContent="space-between"
-                      alignItems="center"
-                      sx={{ width: 1 }}
-                    >
-                      <Typography variant="body2" color="text.secondary">
-                        Community Rewards & Airdrops
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {COMMUNITY_WALLET_CONTRACT_ADRESS}
-                        <IconButton
-                          size="small"
-                          onClick={() =>
-                            copyToClipboard(COMMUNITY_WALLET_CONTRACT_ADRESS)
-                          }
-                        >
-                          <ContentCopyIcon />
-                        </IconButton>
-                      </Typography>
-                    </Stack>
-                  </ListItem>
-                  <ListItem divider>
-                    <Stack
-                      direction="row"
-                      justifyContent="space-between"
-                      alignItems="center"
-                      sx={{ width: 1 }}
-                    >
-                      <Typography variant="body2" color="text.secondary">
-                        Team & Development
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {TEAM_WALLET_CONTRACT_ADRESS}
-                        <IconButton
-                          size="small"
-                          onClick={() =>
-                            copyToClipboard(TEAM_WALLET_CONTRACT_ADRESS)
-                          }
-                        >
-                          <ContentCopyIcon />
-                        </IconButton>
-                      </Typography>
-                    </Stack>
-                  </ListItem>
-                </List>
-              </Grid>
-            </Grid>
-          </TabPanel>
         </TabContext>
       </Stack>
     </Section>

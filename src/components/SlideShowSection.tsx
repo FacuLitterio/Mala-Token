@@ -69,11 +69,12 @@ const Slideshow: React.FC<SlideshowProps> = ({ angle }) => {
               >
                 <Stack spacing={2} direction="row" alignItems="center">
                   <Avatar src={MalaLogo} sx={{ height: 60, width: 60 }} />
-                  <Stack alignItems="center">
+                  <Stack spacing={0}>
                     <Typography
                       sx={{
-                        fontSize: "2rem",
-                        color: "white",
+                        fontSize: "2.8rem",
+                        color: "text.primary",
+                        lineHeight: 1.1,
                       }}
                     >
                       $MALA

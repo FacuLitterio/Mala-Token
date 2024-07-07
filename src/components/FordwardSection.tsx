@@ -1,5 +1,6 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import {
+  Avatar,
   Box,
   Button,
   Chip,
@@ -10,6 +11,7 @@ import {
 } from "@mui/material";
 import IntroVideo from "common/assets/IntroVideo2.mp4";
 import MoonShotImage from "common/assets/MoonShot.png";
+import MoonShotSVG from "common/assets/MoonShotSVG.svg";
 import AnimatedMalaCoin from "common/components/AnimatedMalaCoin";
 import AnimatedSubtitle from "common/components/AnimatedSubtitle";
 import AnimatedTitle from "common/components/AnimatedTitle";
@@ -77,12 +79,13 @@ const FordwardSection = () => {
           <Grid item xs>
             <AnimateWhileView anchor="right">
               <Stack spacing={2}>
-                <Stack direction="row">
+                <Stack direction="row" alignItems="center" spacing={2}>
                   <Chip
                     label="Introducing"
                     variant="outlined"
-                    sx={{ maxWidth: 120 }}
+                    sx={{ maxWidth: 150 }}
                   />
+                  <Avatar src={MoonShotSVG} sx={{ height: 25, width: 25 }} />
                 </Stack>
                 <AnimatedTitle
                   text="$MALA Movement on the BlockChain"

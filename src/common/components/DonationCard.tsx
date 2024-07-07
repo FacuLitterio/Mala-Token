@@ -64,7 +64,12 @@ const DonationCard: React.FC<DonationCardProps> = ({
           <Typography variant="h2" color="primary.light">
             {amount}
           </Typography>
-          <Typography variant="body2" color="text.secondary" textAlign="center">
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            textAlign="center"
+            sx={{ height: 80 }}
+          >
             {description}
           </Typography>
           <List dense sx={{ width: 1 }}>

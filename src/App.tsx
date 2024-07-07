@@ -8,6 +8,7 @@ import {
 import Box from "@mui/material/Box";
 import CustomAudioPlayer from "common/components/AudioPlayer";
 import DrawerMenu from "common/components/DrawerMenu";
+import CommunitySection from "components/CommunitySection";
 import DonationsSection from "components/DonationsSection";
 import FlagSection from "components/FlagSection";
 import FordwardSection from "components/FordwardSection";
@@ -70,6 +71,7 @@ const App = () => {
           <MissionSection />
           <DonationsSection />
           <TokenomicsSection />
+          <CommunitySection />
           <RoadmapSection />
           <HowBuySection />
           <PrivacyPolicySection />

@@ -9,13 +9,14 @@ import {
   Typography,
 } from "@mui/material";
 import BanderaArgentina from "common/assets/banderaargentina.jpg";
-import { SOLANA_CONTRACT_ADRESS } from "constants";
 import { useSnackbar } from "notistack";
+
+const SOLANA_CA = import.meta.env.VITE_SOLANA_CA;
 
 const FlagSection = () => {
   const { enqueueSnackbar } = useSnackbar();
   const handleCopyToClipboard = async () => {
-    await navigator.clipboard.writeText(SOLANA_CONTRACT_ADRESS);
+    await navigator.clipboard.writeText(SOLANA_CA);
     enqueueSnackbar("Copied");
   };
   return (
@@ -102,7 +103,7 @@ const FlagSection = () => {
                       },
                     }}
                   >
-                    {SOLANA_CONTRACT_ADRESS}
+                    {SOLANA_CA}
                   </Typography>
                   <IconButton color="inherit" onClick={handleCopyToClipboard}>
                     <ContentCopyIcon />

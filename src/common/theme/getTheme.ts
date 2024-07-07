@@ -5,7 +5,7 @@ const commonTokens = (): ThemeOptions["palette"] => ({
     main: "#71A7D9",
   },
   background: {
-    paper: "#1E1F31",
+    paper: "#070707",
   },
   text: {
     primary: "#FFFFFF",

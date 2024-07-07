@@ -109,7 +109,7 @@ const AppBar: React.FC<{ onChangeMenu: () => void }> = ({ onChangeMenu }) => {
             sx={{
               height: 64,
               mt: 2,
-              bgcolor: "#212121",
+              bgcolor: "#161616",
               borderRadius: 20,
               p: 2,
             }}
