@@ -281,9 +281,12 @@ const TokenomicsSection = () => {
                     Important
                   </AlertTitle>
                   <Typography variant="body2" paragraph color="text.primary">
-                    We are committed to transparency and building trust. This
-                    project is not a scam; it is a serious, trustworthy venture.
-                    To prove our commitment,{" "}
+                    We are committed to transparency and building trust.{" "}
+                    <b>
+                      This is a Community Token. This project is not a scam;
+                    </b>{" "}
+                    it is a serious, trustworthy venture. To prove our
+                    commitment,{" "}
                     <b>
                       {" "}
                       the team will only purchase 120M Tokens at the time of the
