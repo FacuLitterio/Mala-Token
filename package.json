@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://faculitterio.github.io/Mala-Token/",
+  "homepage": "https://malamemecoin.com",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
