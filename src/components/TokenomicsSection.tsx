@@ -145,9 +145,9 @@ const TokenomicsSection = () => {
           </Grid>
           <Grid item xs={12} md={3}>
             <Stack alignItems="center">
-              <AnimatedTitle text="PreSale" variant="h3" color="text.primary" />
+              <AnimatedTitle text="No" variant="h3" color="text.primary" />
               <AnimatedTitle
-                text="No"
+                text="PreSale"
                 variant="h3"
                 color="text.primary"
                 fontWeight={600}
@@ -282,20 +282,20 @@ const TokenomicsSection = () => {
                   </AlertTitle>
                   <Typography variant="body2" paragraph color="text.primary">
                     We are committed to transparency and building trust.{" "}
-                    <b>
-                      This is a Community Token. This project is not a scam;
-                    </b>{" "}
-                    it is a serious, trustworthy venture. To prove our
-                    commitment,{" "}
+                    <b>This is a Community Token.</b>{" "}
                     <b>
                       {" "}
-                      the team will only purchase 120M Tokens at the time of the
+                      The team will only purchase 120M Tokens at the time of the
                       token launch on MoonShot and will not buy more
                     </b>
-                    . The tokens will be distributed into the wallets when
-                    liquidity migrates to Raydium. We will also share the
-                    addresses of the wallets where the tokens are distributed.
-                    This ensures full transparency and fairness.
+                    .{" "}
+                    <b>
+                      The tokens will be distributed into the wallets when
+                      liquidity migrates to Raydium.{" "}
+                    </b>{" "}
+                    We will also share the addresses of the wallets where the
+                    tokens are distributed. This ensures full transparency and
+                    fairness.
                   </Typography>
                 </Alert>
                 <Box
