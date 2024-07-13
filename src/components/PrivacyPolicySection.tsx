@@ -9,7 +9,7 @@ const PrivacyPolicySection = () => {
       <Grid container justifyContent="center" sx={{ mt: 4 }}>
         <Grid item xs={12} sm={10} md={8} lg={5}>
           <Stack spacing={2} alignItems="center">
-            <Avatar src={MalaLogo} sx={{ height: 100, width: 100 }} />
+            <Avatar src={MalaLogo} sx={{ height: 150, width: 150 }} />
             <Stack direction="row" spacing={3} justifyContent="center">
               <Link
                 href="/files/WhitePaperMala.pdf"

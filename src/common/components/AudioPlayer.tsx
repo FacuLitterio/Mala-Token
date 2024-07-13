@@ -1,8 +1,15 @@
 import { Box } from "@mui/material";
 import IntroMusic from "common/assets/Metamorphosis.mp3";
+import { useEffect, useState } from "react";
 import { Player } from "react-simple-player";
 
 const CustomAudioPlayer = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
     <Box
       sx={{
@@ -14,7 +21,15 @@ const CustomAudioPlayer = () => {
         zIndex: 99999,
       }}
     >
-      <Player autoPlay={true} src={IntroMusic} height={40} hideVolume />
+      {isMounted && (
+        <Player
+          key="AudioPlayer"
+          autoPlay={true}
+          src={IntroMusic}
+          height={40}
+          hideVolume
+        />
+      )}
     </Box>
   );
 };

@@ -1,9 +1,13 @@
+import GraphicEqIcon from "@mui/icons-material/GraphicEq";
 import {
+  Backdrop,
+  Button,
   createTheme,
   CssBaseline,
   PaletteMode,
   responsiveFontSizes,
   ThemeProvider,
+  Typography,
 } from "@mui/material";
 import Box from "@mui/material/Box";
 import CustomAudioPlayer from "common/components/AudioPlayer";
@@ -27,6 +31,7 @@ const ColorModeContext = createContext({ toggleColorMode: () => {} });
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mode, setMode] = useState<PaletteMode>("light");
+  const [backdropOpen, setBackdropOpen] = useState(true);
 
   const colorMode = useMemo(
     () => ({
@@ -48,35 +53,62 @@ const App = () => {
     setIsMenuOpen(false);
   }, []);
 
+  const handleBackdropClose = () => {
+    setBackdropOpen(false);
+  };
+
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Box
-          component="main"
-          sx={{
-            minHeight: "100vh",
-            width: 1,
-            display: "flex",
-            flexDirection: "column",
-            overflowX: "hidden",
-            bgcolor: theme.palette.background.paper,
-          }}
+        <Backdrop
+          sx={{ color: "#000", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={backdropOpen}
         >
-          <AppBar onChangeMenu={handleChangeMenuOpen} />
-          <DrawerMenu isOpen={isMenuOpen} onClose={handleClose} />
-          <FordwardSection />
-          <SlideShowSection />
-          <FlagSection />
-          <MissionSection />
-          <DonationsSection />
-          <TokenomicsSection />
-          <CommunitySection />
-          <RoadmapSection />
-          <HowBuySection />
-          <PrivacyPolicySection />
-          <CustomAudioPlayer />
-        </Box>
+          <Box textAlign="center">
+            <Typography variant="h4" gutterBottom>
+              Welcome to $MALA
+            </Typography>
+            <Typography variant="h6" gutterBottom>
+              Click the button to enable sound.
+            </Typography>
+            <Button
+              variant="contained"
+              color="primary"
+              startIcon={<GraphicEqIcon />}
+              onClick={handleBackdropClose}
+            >
+              Enable sound
+            </Button>
+          </Box>
+        </Backdrop>
+        {!backdropOpen && (
+          <Box
+            component="main"
+            sx={{
+              minHeight: "100vh",
+              width: 1,
+              display: "flex",
+              flexDirection: "column",
+              overflowX: "hidden",
+              bgcolor: theme.palette.background.paper,
+            }}
+          >
+            <AppBar onChangeMenu={handleChangeMenuOpen} />
+            <DrawerMenu isOpen={isMenuOpen} onClose={handleClose} />
+            <FordwardSection />
+            <SlideShowSection />
+            <FlagSection />
+            <MissionSection />
+            <DonationsSection />
+            <TokenomicsSection />
+            <CommunitySection />
+            <RoadmapSection />
+            <HowBuySection />
+            <PrivacyPolicySection />
+            <CustomAudioPlayer />
+          </Box>
+        )}
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
